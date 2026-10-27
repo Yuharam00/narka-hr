@@ -1,0 +1,990 @@
+<!doctype html><html><head><meta name="robots" content="noindex, nofollow"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>NARKA Onboarding</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: 한국어 명조 제목 + 넉넉한 본문의 브랜드북. 유일한 그래픽은 '겹겹이 쌓이는 색의 층'(브랜드 시그너처 패턴의 해석) — 단계가 진행될수록 층이 하나씩 늘어난다.
+   영문은 첫 인사(둥글고 두꺼운 서체)에만 쓴다. 색상은 공개 인터뷰의 '따뜻한 옐로' 해석값 — 공식 가이드 수령 시 --l*, --sun만 교체 */
+:root{
+  --paper:#FFFDF7;
+  --paper-2:#F6F0E2;
+  --ink:#221E17;
+  --ink-2:#4F483C;
+  --muted:#7D7466;
+  --rule:#E8E0CE;
+  --rule-2:#D3C7AF;
+  --sun:#F2C230;
+  --sun-soft:#FCEFC4;
+  --on-sun:#221E17;
+  --l1:#FBEFC6;
+  --l2:#F7DB80;
+  --l3:#F2C230;
+  --l4:#D9971F;
+  --l5:#8A5A2B;
+  --flag:#94570A;
+  --flag-bg:#FCEFD0;
+  --alert:#A93C26;
+  --alert-bg:#FAE5DE;
+  --ok:#3B7451;
+  --scrim:rgba(34,30,23,.4);
+  --round:"Nunito","Noto Sans KR",system-ui,sans-serif;
+  --serif:"Gowun Batang","Noto Serif KR","AppleMyungjo",serif;
+  --body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --hdr:var(--paper);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#16130F;--paper-2:#1F1B15;--ink:#F2EBDC;--ink-2:#D2C9B8;--muted:#9B9181;--rule:#2F2920;--rule-2:#433B2E;--sun:#F2C230;--sun-soft:#3A3014;--on-sun:#221E17;--l1:#3A3014;--l2:#6B5418;--l3:#B38D1E;--l4:#D9971F;--l5:#B07A45;--flag:#E8B25A;--flag-bg:#2E2412;--alert:#EE8C73;--alert-bg:#331B15;--ok:#7CC49A;--scrim:rgba(0,0,0,.55);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#16130F;--paper-2:#1F1B15;--ink:#F2EBDC;--ink-2:#D2C9B8;--muted:#9B9181;--rule:#2F2920;--rule-2:#433B2E;--sun:#F2C230;--sun-soft:#3A3014;--on-sun:#221E17;--l1:#3A3014;--l2:#6B5418;--l3:#B38D1E;--l4:#D9971F;--l5:#B07A45;--flag:#E8B25A;--flag-bg:#2E2412;--alert:#EE8C73;--alert-bg:#331B15;--ok:#7CC49A;--scrim:rgba(0,0,0,.55);color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:anywhere;letter-spacing:-.01em}
+body.at-hero{--hdr:var(--sun)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:70;background:var(--hdr)}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.g{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1180px;margin:0 auto}
+.serif{font-family:var(--serif)}
+
+/* ---------- 층 (strata) ---------- */
+.strata{display:flex;flex-direction:column}
+.strata i{display:block;width:100%}
+.strata .a{background:var(--l1)}.strata .b{background:var(--l2)}.strata .c{background:var(--l3)}.strata .d{background:var(--l4)}.strata .e{background:var(--l5)}
+
+/* ---------- header ---------- */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:var(--hdr);border-bottom:1px solid transparent;transition:background .25s,border-color .25s}
+body:not(.at-hero) .hdr{border-bottom-color:var(--rule)}
+.hdr-in{display:flex;align-items:center;gap:28px;height:64px}
+.mark{font-family:var(--round);font-weight:900;font-size:24px;letter-spacing:-.04em;text-decoration:none;line-height:1}
+.hdr-sp{flex:1}
+.hdr nav{display:flex;gap:24px}
+.hdr nav a,.hbtn{font-size:14px;text-decoration:none;color:var(--ink);background:none;border:0;padding:6px 0;cursor:pointer;border-bottom:1px solid transparent}
+.hdr nav a:hover,.hbtn:hover{border-bottom-color:currentColor}
+.hbtn{font-weight:700}
+
+/* ---------- HOME · 첫 인사 ---------- */
+.hero{background:var(--sun);color:var(--on-sun)}
+.hero-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 24px;padding-block:40px 64px}
+.kicker{grid-column:1/-1;font-size:13.5px;margin:0 0 56px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.hero h1{grid-column:1/10;margin:0;font-family:var(--round);font-weight:900;font-size:clamp(64px,11.6vw,168px);line-height:.86;letter-spacing:-.045em}
+.hero h1 span{display:block}
+.hero h1 .to{padding-left:1.15em}
+.hero-note{grid-column:9/13;align-self:end;margin-top:32px}
+.hero-note .kor{font-family:var(--serif);font-weight:700;font-size:clamp(21px,2vw,26px);line-height:1.55;margin:0 0 24px}
+.hero-cta{display:inline-flex;gap:10px;align-items:center;font-size:15px;font-weight:700;text-decoration:none;border-bottom:2px solid var(--on-sun);padding-bottom:4px}
+.hero-cta:hover span{transform:translateY(2px)}
+.hero-cta span{display:inline-block;transition:transform .2s}
+.hero-strata i:nth-child(1){height:6px}.hero-strata i:nth-child(2){height:12px}.hero-strata i:nth-child(3){height:22px}
+
+/* ---------- HOME · 편지 ---------- */
+.letter{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding-block:88px 72px}
+.side{grid-column:1/4;font-size:13.5px;color:var(--muted);padding-top:10px}
+.letter-body{grid-column:4/11}
+.letter-body p{font-family:var(--serif);font-size:clamp(21px,2.1vw,27px);line-height:1.75;margin:0 0 18px;text-wrap:pretty}
+.letter-body .sign{font-family:var(--body);font-size:14.5px;color:var(--ink-2);margin-top:28px}
+.lines{grid-column:4/13;margin-top:40px;padding-top:24px;border-top:1px solid var(--rule)}
+.lines small{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
+.lines a{font-family:var(--serif);font-weight:700;font-size:clamp(20px,2.2vw,28px);text-decoration:none;line-height:1.7;background:linear-gradient(var(--sun),var(--sun)) 0 100%/0 3px no-repeat;transition:background-size .3s}
+.lines a:hover{background-size:100% 3px}
+.lines .sl{color:var(--rule-2);margin:0 .4em;font-family:var(--body);font-weight:400}
+
+/* ---------- HOME · 순서 ---------- */
+.sec-title{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;margin-bottom:36px;align-items:end}
+.sec-title h2{grid-column:1/9;font-family:var(--serif);font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.3;margin:0;letter-spacing:-.02em}
+.sec-title p{grid-column:9/13;margin:0;font-size:14.5px;color:var(--ink-2)}
+.journey{padding-block:40px 96px}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--ink)}
+.step{display:flex;flex-direction:column;text-decoration:none;padding:0 20px 28px 0;border-right:1px solid var(--rule);min-width:0}
+.step + .step{padding-left:20px}
+.step:last-child{border-right:0}
+.step .stack{height:40px;display:flex;flex-direction:column;justify-content:flex-end;margin:0 -20px 0 0}
+.step + .step .stack{margin-left:-20px}
+.step .stack i{height:8px}
+.step .when{font-size:13px;color:var(--muted);margin-top:22px}
+.step h3{font-family:var(--serif);font-weight:700;font-size:23px;line-height:1.35;margin:4px 0 14px;letter-spacing:-.02em}
+.step ul{list-style:none;padding:0;margin:0 0 20px;font-size:14px;line-height:1.65;color:var(--ink-2);display:grid;gap:6px}
+.step .pend{font-size:13px;color:var(--flag)}
+.step .more{margin-top:auto;font-size:13.5px;font-weight:700}
+.step:hover h3{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:3px;text-underline-offset:6px}
+
+/* ---------- HOME · 문서 목록 ---------- */
+.docs{background:var(--paper-2);padding-block:88px 72px}
+.dgroup{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;border-top:1px solid var(--ink);padding-top:18px;margin-bottom:44px}
+.dgroup h3{grid-column:1/4;margin:0;font-size:14px;font-weight:700}
+.dlist{grid-column:4/13;display:grid}
+.drow{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:20px;align-items:baseline;padding:0 0 18px;margin-bottom:18px;border-bottom:1px solid var(--rule);text-decoration:none}
+.dlist .drow:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.drow .n{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.drow b{font-family:var(--serif);font-weight:700;font-size:clamp(21px,2.3vw,28px);line-height:1.3;letter-spacing:-.02em}
+.drow small{display:block;font-size:14px;color:var(--ink-2);margin-top:4px}
+.drow .st{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.drow .flag-t{color:var(--flag)}.drow .alert-t{color:var(--alert)}
+.drow:hover b{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:3px;text-underline-offset:6px}
+
+/* ---------- HOME · 비전 / 문의 ---------- */
+.vision{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding-block:96px 80px}
+.vision .vstack{grid-column:1/3;align-self:stretch;display:flex;flex-direction:row}
+.vision .vstack i{width:auto;flex:1}
+.vision blockquote{grid-column:4/12;margin:0;font-family:var(--serif);font-weight:700;font-size:clamp(26px,3.3vw,44px);line-height:1.5;letter-spacing:-.02em;text-wrap:balance}
+.vision .src{grid-column:4/12;font-size:14px;color:var(--muted);margin:-4px 0 0}
+.vision .src a{color:var(--ink);font-weight:500}
+.help{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding-block:40px 88px}
+.help h2{grid-column:1/4;margin:0;font-family:var(--serif);font-size:22px;font-weight:700}
+.help dl{grid-column:4/13;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1px solid var(--ink);padding-top:18px}
+.help dt{font-size:14px;color:var(--muted)}
+.help dd{margin:4px 0 0;font-family:var(--serif);font-weight:700;font-size:24px}
+
+.foot{background:var(--ink);color:var(--paper)}
+.foot .strata i{height:6px}
+.foot-in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:baseline;padding-block:36px calc(36px + env(safe-area-inset-bottom,0px));font-size:13px}
+.foot .mark{font-size:28px;color:var(--paper)}
+.foot p{margin:0;opacity:.72;max-width:36em}
+
+/* ---------- DETAIL ---------- */
+.chap{background:var(--paper-2)}
+.chap-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding-block:48px 44px}
+.chap-side{grid-column:1/4;font-size:13.5px;color:var(--muted);display:grid;align-content:start;gap:2px}
+.chap-side b{font-weight:500;color:var(--ink)}
+.chap-main{grid-column:4/13}
+.crumb{font-size:13.5px;color:var(--muted);margin-bottom:12px}
+.crumb a{text-decoration:none;border-bottom:1px solid var(--rule-2)}
+.chap h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,4.6vw,58px);line-height:1.2;letter-spacing:-.03em;margin:0;text-wrap:balance}
+.chap .lede{margin:12px 0 0;font-size:16.5px;color:var(--ink-2)}
+.meta{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:22px;font-size:13px;color:var(--muted)}
+.meta a{color:var(--muted)}
+.meta .flag-t{color:var(--flag);font-weight:500}.meta .alert-t{color:var(--alert);font-weight:500}.meta .ok-t{color:var(--ok);font-weight:500}
+.chap .strata i:nth-child(1){height:3px}.chap .strata i:nth-child(2){height:6px}
+
+.layout{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding-block:52px 96px}
+.rail{grid-column:1/4;position:sticky;top:calc(88px + env(safe-area-inset-top,0px));align-self:start;font-size:14px;padding-right:12px}
+.rail h4{margin:0 0 8px;font-size:12.5px;color:var(--muted);font-weight:500}
+.rail ol{list-style:none;margin:0;padding:0}
+.rail a{display:flex;gap:10px;padding:5px 0;text-decoration:none;color:var(--ink-2);line-height:1.5}
+.rail a span{font-size:12px;color:var(--muted);width:20px;flex:none;padding-top:2px;font-variant-numeric:tabular-nums}
+.rail a:hover{color:var(--ink)}
+.rail a[aria-current="page"]{color:var(--ink);font-weight:700;box-shadow:inset 0 -3px 0 var(--sun);width:max-content;max-width:100%}
+.rail .home-l{display:inline-block;margin-bottom:28px;font-weight:500;color:var(--ink);border-bottom:1px solid var(--rule-2);padding:0}
+.rail .toc{margin-top:28px;padding-top:18px;border-top:1px solid var(--rule)}
+
+.content{grid-column:4/12;min-width:0}
+.content > h2{font-family:var(--serif);font-weight:700;font-size:clamp(23px,2.3vw,29px);letter-spacing:-.02em;line-height:1.35;margin:64px 0 18px;scroll-margin-top:96px;display:flex;gap:14px;align-items:baseline}
+.content > h2:first-child{margin-top:0}
+.content > h2 .sn{font-family:var(--body);font-size:13px;font-weight:500;color:var(--muted);flex:none}
+.content h3{font-size:17px;font-weight:700;margin:36px 0 10px}
+.content p{margin:0 0 14px}
+.content ul,.content ol{margin:0 0 18px;padding-left:22px}
+.content li{margin:6px 0}
+.content li::marker{color:var(--muted)}
+.content code{font-size:.88em;background:var(--paper-2);padding:1px 6px;border:1px solid var(--rule)}
+.content a.ext,.content a.int{text-decoration:none;font-weight:500;box-shadow:inset 0 -2px 0 var(--sun)}
+.content a.ext:hover,.content a.int:hover{box-shadow:inset 0 -.6em 0 var(--sun-soft)}
+.content a.ext::after{content:" ↗";font-size:.8em;color:var(--muted)}
+
+.flag{display:inline-block;font-size:12.5px;font-weight:500;color:var(--flag);background:var(--flag-bg);padding:0 7px;margin:0 2px;white-space:nowrap;line-height:1.7}
+
+.note-b{padding:2px 0 2px 18px;margin:22px 0;border-left:2px solid var(--rule-2);color:var(--ink-2);font-size:15px}
+.note-b p{margin:0}.note-b p+p{margin-top:4px}
+.note-b.warn{border-left-color:var(--sun);background:var(--sun-soft);padding:14px 18px;color:var(--ink)}
+.note-b.danger{border-left-color:var(--alert);background:var(--alert-bg);padding:14px 18px;color:var(--ink)}
+.note-b.info{border-left-color:var(--l4)}
+
+.tbl{overflow-x:auto;margin:16px 0 26px}
+table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.7}
+thead th{font-size:12.5px;font-weight:500;color:var(--muted);text-align:left;padding:0 16px 10px 0;border-bottom:1px solid var(--ink);white-space:nowrap}
+td,tbody th{padding:15px 16px 15px 0;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+tbody th{font-weight:700;white-space:nowrap;padding-right:28px}
+td{min-width:140px}
+
+.spec{margin:16px 0 26px;border-top:1px solid var(--ink)}
+.spec div{display:grid;grid-template-columns:minmax(110px,160px) minmax(0,1fr);gap:20px;padding:15px 0;border-bottom:1px solid var(--rule)}
+.spec dt{font-weight:700;font-size:14.5px}
+.spec dd{margin:0}
+
+.sched{list-style:none;padding:0;margin:16px 0 26px;border-top:1px solid var(--ink)}
+.sched li{display:grid;grid-template-columns:116px minmax(0,1fr) auto;gap:20px;padding:15px 0;border-bottom:1px solid var(--rule);margin:0}
+.sched .t{font-weight:700;font-variant-numeric:tabular-nums}
+.sched .who{font-size:13px;color:var(--muted);white-space:nowrap}
+
+.years{list-style:none;padding:0;margin:20px 0 28px}
+.years li{display:grid;grid-template-columns:minmax(110px,170px) minmax(0,1fr);gap:24px;padding:20px 0;border-top:1px solid var(--rule);margin:0;align-items:baseline}
+.years .y{font-family:var(--serif);font-weight:700;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.02em;line-height:1.1}
+.years li:last-child .y{box-shadow:inset 0 -6px 0 var(--sun);width:max-content}
+.years .w{font-size:16.5px}
+
+blockquote.vision-q{margin:20px 0 32px;font-family:var(--serif);font-weight:700;font-size:clamp(25px,3vw,38px);line-height:1.55;letter-spacing:-.02em;text-wrap:balance}
+
+.figure{margin:16px 0 28px;padding:28px;background:var(--paper-2);font-size:15px;color:var(--ink-2)}
+.figure b{display:block;font-family:var(--serif);font-size:20px;color:var(--ink);margin-bottom:4px}
+
+/* 체크리스트 */
+.j-tools{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:13.5px;color:var(--muted);margin:4px 0 8px}
+.tgl{background:none;border:0;padding:0;cursor:pointer;font-size:13.5px;display:inline-flex;gap:8px;align-items:center;color:var(--ink)}
+.tgl .sw{width:30px;height:18px;border-radius:9px;background:var(--rule-2);position:relative;transition:background .2s}
+.tgl .sw::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--paper);transition:transform .2s}
+.tgl[aria-pressed="true"] .sw{background:var(--ink)}
+.tgl[aria-pressed="true"] .sw::after{transform:translateX(12px)}
+.stops{margin:28px 0 8px}
+.jstop{display:grid;grid-template-columns:72px minmax(0,1fr);gap:0 20px;padding-top:18px;border-top:1px solid var(--ink)}
+.jstop .layer{display:flex;flex-direction:column;justify-content:flex-end;height:40px}
+.jstop .layer i{height:8px}
+.jstop h4{margin:0;font-size:17px;font-weight:700;display:flex;justify-content:space-between;gap:12px;align-items:baseline;line-height:1.5}
+.jstop h4 span{font-size:13px;color:var(--muted);font-weight:400}
+.jbody{min-width:0;padding-bottom:20px}
+.ci{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--rule);cursor:pointer}
+.ci:first-of-type{margin-top:8px}
+.ci:last-child{border-bottom:0}
+.ci input{position:absolute;opacity:0;pointer-events:none}
+.ci .bx{width:20px;height:20px;flex:none;border:1.5px solid var(--ink-2);display:grid;place-items:center;margin-top:3px;transition:background .2s,border-color .2s}
+.ci .bx svg{width:12px;height:12px;stroke:var(--on-sun);stroke-width:2.6;fill:none;opacity:0;transition:opacity .2s}
+.ci input:checked+.bx{background:var(--sun);border-color:var(--sun)}
+.ci input:checked+.bx svg{opacity:1}
+.ci input:focus-visible+.bx{outline:2px solid var(--ink);outline-offset:3px}
+.ci.done .tx{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--rule-2)}
+.only-open .ci.done{display:none}
+.reset{background:none;border:0;padding:0;cursor:pointer;color:var(--muted);font-size:13.5px;border-bottom:1px solid var(--rule-2)}
+
+/* 복리후생 지면 */
+.bene{margin:12px 0 40px}
+.bene-cat{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:24px;padding:24px 0;border-top:1px solid var(--ink)}
+.bene-cat h3{margin:0;font-family:var(--serif);font-weight:700;font-size:clamp(26px,3vw,36px);line-height:1.1}
+.bene-cat h3 small{display:block;font-family:var(--body);font-size:13px;font-weight:400;color:var(--muted);margin-top:8px}
+.bene-item{padding:0 0 14px;margin-bottom:14px;border-bottom:1px solid var(--rule)}
+.bene-item:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.bene-item b{display:block;font-size:17.5px;font-weight:700;line-height:1.55}
+.bene-item span{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+
+.rel{margin-top:44px;font-size:14px;color:var(--muted)}
+.rel a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule-2);margin-left:14px;font-weight:500;line-height:2.2;display:inline-block}
+.next-up{margin-top:56px;border-top:1px solid var(--ink);padding-top:22px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.next-up a{text-decoration:none}
+.next-up small{font-size:13px;color:var(--muted)}
+.next-up b{display:block;font-family:var(--serif);font-size:clamp(20px,2vw,25px);font-weight:700;margin-top:2px;line-height:1.35}
+.next-up a:hover b{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:3px;text-underline-offset:5px}
+.next-up .nx{text-align:right;grid-column:2}
+
+/* ---------- overlays ---------- */
+.ov{position:fixed;inset:0;z-index:100}
+.ov-scrim{position:absolute;inset:0;background:var(--scrim)}
+.menu-panel{position:absolute;inset:0 0 auto 0;max-height:100%;overflow-y:auto;background:var(--sun);color:var(--on-sun);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.menu-top{display:flex;justify-content:space-between;align-items:center;height:64px}
+.menu-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding-block:24px 56px}
+.menu-grid .home-big{grid-column:1/4;font-family:var(--round);font-weight:900;font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;text-decoration:none;line-height:1}
+.menu-list{grid-column:4/13;list-style:none;margin:0;padding:0;border-top:1px solid var(--on-sun)}
+.menu-list a{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(34,30,23,.2);text-decoration:none}
+.menu-list .n{font-size:13px}
+.menu-list b{font-family:var(--serif);font-weight:700;font-size:clamp(21px,2.6vw,32px);line-height:1.3}
+.menu-list .s{font-size:13px;opacity:.7;white-space:nowrap}
+.menu-list a[aria-current="page"] b,.menu-list a:hover b{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.close-x{background:none;border:0;cursor:pointer;font-size:14px;font-weight:700;padding:6px 0;border-bottom:1px solid currentColor}
+
+.search-panel{position:absolute;left:50%;top:calc(9vh + env(safe-area-inset-top,0px));transform:translateX(-50%);width:min(680px,calc(100% - 32px));background:var(--paper);border-top:6px solid var(--sun)}
+.s-in{display:flex;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid var(--ink)}
+.s-in input{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;font-size:19px;color:var(--ink)}
+.s-in input::placeholder{color:var(--muted)}
+.s-f{display:flex;gap:16px;padding:12px 20px;border-bottom:1px solid var(--rule);overflow-x:auto;font-size:13.5px}
+.s-f button{background:none;border:0;padding:2px 0;cursor:pointer;color:var(--muted);white-space:nowrap;border-bottom:2px solid transparent}
+.s-f button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--sun);font-weight:700}
+.s-res{max-height:56vh;overflow-y:auto}
+.s-r{display:block;padding:14px 20px;text-decoration:none;border-bottom:1px solid var(--rule)}
+.s-r:hover,.s-r.on{background:var(--sun-soft)}
+.s-r small{font-size:12px;color:var(--muted)}
+.s-r b{display:block;font-family:var(--serif);font-size:17px;font-weight:700}
+.s-r p{margin:2px 0 0;font-size:14px;color:var(--ink-2);line-height:1.55}
+.s-r mark{background:var(--sun);color:var(--on-sun);padding:0 2px}
+.s-empty{padding:32px 20px;color:var(--muted)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .hdr nav{display:none}
+  .hero h1{grid-column:1/-1}
+  .hero-note{grid-column:1/-1;max-width:30em}
+  .steps{grid-template-columns:1fr 1fr}
+  .step{border-bottom:1px solid var(--rule);padding:0 20px 24px 0!important;margin:0}
+  .step:nth-child(even){padding-left:20px!important;border-right:0}
+  .step:nth-child(even) .stack{margin-left:-20px}
+  .step:nth-child(odd) .stack{margin-left:0}
+  .step:last-child{grid-column:1/-1;border-bottom:0}
+  .side,.letter-body,.lines,.sec-title h2,.sec-title p,.dgroup h3,.dlist,.vision blockquote,.vision .src,.help h2,.help dl,.chap-side,.chap-main,.content,.menu-grid .home-big,.menu-list{grid-column:1/-1}
+  .vision .vstack{grid-column:1/-1;height:24px;flex-direction:column}
+  .vision .vstack i{flex:1}
+  .rail{display:none}
+  .chap-side{display:flex;gap:12px}
+}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .kicker{margin-bottom:36px}
+  .hero h1 .to{padding-left:.6em}
+  .letter{padding-block:56px 48px}
+  .steps{grid-template-columns:1fr}
+  .step,.step:nth-child(even){padding:0 0 22px 0!important;border-right:0}
+  .step .stack,.step:nth-child(even) .stack{margin:0}
+  .drow{grid-template-columns:32px minmax(0,1fr);gap:12px}
+  .drow .st{grid-column:2}
+  .help dl{grid-template-columns:1fr;gap:16px}
+  .spec div,.sched li,.years li,.bene-cat{grid-template-columns:1fr;gap:4px}
+  .jstop{grid-template-columns:40px minmax(0,1fr);gap:0 14px}
+  .next-up{grid-template-columns:1fr}
+  .next-up .nx{grid-column:1;text-align:left}
+  .menu-list a{grid-template-columns:32px minmax(0,1fr)}
+  .menu-list .s{grid-column:2}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+</style>
+
+<header class="hdr g">
+  <div class="wrap hdr-in">
+    <a class="mark" href="#home" data-nav="home" aria-label="나르카 온보딩 처음으로">narka</a>
+    <div class="hdr-sp"></div>
+    <nav aria-label="자주 찾는 문서"><a href="#first-day" data-nav="first-day">첫 출근</a><a href="#work" data-nav="work">근무 규정</a><a href="#benefits" data-nav="benefits">복리후생</a><a href="#people" data-nav="people">조직과 담당자</a></nav>
+    <button class="hbtn" id="searchBtn" aria-label="온보딩 문서 검색">검색</button>
+    <button class="hbtn" id="menuBtn" aria-haspopup="dialog">전체 문서</button>
+  </div>
+</header>
+
+<main id="root"></main>
+
+<div class="ov" id="menuOv" hidden>
+  <div class="ov-scrim" data-close="menu"></div>
+  <div class="menu-panel g" role="dialog" aria-modal="true" aria-label="전체 문서">
+    <div class="wrap">
+      <div class="menu-top"><span class="mark">narka</span><button class="close-x" data-close="menu">닫기</button></div>
+      <div class="menu-grid" id="menuGrid"></div>
+    </div>
+  </div>
+</div>
+
+<div class="ov" id="searchOv" hidden>
+  <div class="ov-scrim" data-close="search"></div>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="문서 검색">
+    <div class="s-in"><input id="q" type="search" placeholder="연차, 법인카드, 시용 기간, FLEX" autocomplete="off" aria-label="검색어"><button class="close-x" data-close="search">닫기</button></div>
+    <div class="s-f" id="filters"></div>
+    <div class="s-res" id="results"></div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   콘텐츠: 노션 "나르카 온보딩 페이지" 원본 9개 페이지 (2026-10-21 조회본) — 문구 변경 없음
+   ========================================================= */
+const NOTION = id => "https://app.notion.com/p/" + id;
+const GROUPS = [
+  {id:"start", name:"시작하기"},
+  {id:"company", name:"회사 이해"},
+  {id:"policy", name:"근무와 제도"},
+  {id:"work", name:"회사 생활"}
+];
+
+const PAGES = [
+{
+  id:"first-day", group:"start", title:"첫 출근 체크리스트", glyph:"01",
+  desc:"출근 안내, 첫날 일정, 첫날 체크리스트", updated:"2026.10.21", owner:"인사팀",
+  notion:"3ff9a9cf104b812abf00e3529ff3d70e", related:["first-month","people","work"],
+  blocks:[
+    {t:"h2", id:"arrive", text:"첫 출근 안내"},
+    {t:"kv", rows:[
+      ["출근 시간","첫날 09:30 (이후 출근 시각은 [근무 규정](#work) 참고)"],
+      ["근무 장소","서울 종로구 필운대로 43, 301호 (태평타운) 나르카 사무실\n※ 11월 말 마포구 사무실로 이전 예정입니다."],
+      ["업무 장비","업무용 Windows 노트북, 마우스, 모니터 지급 (Mac 등 다른 환경은 입사 전 인사팀에 요청)"],
+      ["업무 메일","회사 메일 초대장을 개인 메일로 발송합니다. 첫날 확인 후 가입해 주세요."],
+      ["도착 시 연락","인사팀 유하람 팀장"]
+    ]},
+    {t:"callout", tone:"soft", icon:"i", text:"제출 서류는 입사 제안서(오퍼레터) 안내에 따라 입사일 전까지 메일로 제출합니다.\n아직 내지 못한 서류가 있으면 첫날 인사팀에 알려 주세요."},
+    {t:"h2", id:"day1", text:"첫날 일정"},
+    {t:"timeline", rows:[
+      ["출근 직후","인사 오리엔테이션: 회사 소개, 근로계약서·비밀유지계약서 작성, 근무 규정·복리후생 안내","인사팀장"],
+      ["오전","자리 배정, 노트북·모니터 수령, 업무 계정 세팅","안도영 이사"],
+      ["11:00~12:00","브랜드 교육","대표이사"],
+      ["13:00~14:20","웰컴런치","대표이사"],
+      ["14:30","팀장 첫 면담: 역할, 첫 달 기대 사항, 팀 업무 소개","팀장"],
+      ["15:00","사무실 둘러보기, 업무 도구 익히기","소속 팀"],
+      ["16:00","첫날 마무리: 불편했던 점·궁금한 점 공유 (5분)","인사팀장"],
+      ["17:00","조기 퇴근","인사팀장"]
+    ]},
+    {t:"callout", tone:"soft", icon:"i", text:"팀 상황에 따라 순서와 시간은 조정될 수 있습니다."},
+    {t:"h2", id:"check", text:"체크리스트"},
+    {t:"tools"},
+    {t:"check", id:"d1-hr", title:"인사팀과 함께", items:[
+      "제출 서류 누락 여부 확인","근로계약서 작성·날인 및 사본 수령","비밀유지계약서 작성",
+      "FLEX 앱 설치·로그인, 내 프로필 정보 입력 (학력·경력, 비상연락처)","근무 규정·복리후생 안내 받기","OJT 교육"]},
+    {t:"check", id:"d1-it", title:"계정·장비 세팅 (안도영 이사)", items:[
+      "노트북·마우스·모니터 수령 및 기본 세팅","회사 메일(Google Workspace) 계정 확인","회사 메일로 온 초대장으로 Slack · Notion · Dropbox 가입"]},
+    {t:"check", id:"d1-team", title:"팀과 함께", items:[
+      "대표이사 브랜드 교육","팀장 첫 면담: 내 역할과 첫 달 기대 사항 확인","팀원들과 인사하기"]},
+    {t:"check", id:"d1-self", title:"스스로", items:[
+      "온보딩 페이지 전체 읽기","[조직과 담당자](#people) 페이지에서 팀별 역할 확인","첫날 마무리 때 불편했던 점·궁금한 점 공유하기"]}
+  ]
+},
+{
+  id:"first-month", group:"start", title:"첫 주 · 첫 달 가이드", glyph:"02",
+  desc:"첫 주 할 일, 시용 기간 면담, 첫 달 점검", updated:"2026.10.21", owner:"인사팀",
+  notion:"3ff9a9cf104b81a0ba53f44fd0ff2e26", related:["first-day","work","about"],
+  blocks:[
+    {t:"h2", id:"week1", text:"첫 주"},
+    {t:"ul", items:[
+      "팀 업무 흐름과 주요 거래처·채널 이해 (팀별 업무 자료는 팀장이 안내합니다)",
+      "함께 일하는 다른 팀 담당자와 인사하기",
+      "주 후반 인사팀장과 짧은 면담: 첫 주 소감과 막히는 점 공유"]},
+    {t:"h3", text:"1주차 안에 완료할 것"},
+    {t:"tools"},
+    {t:"check", id:"w1", title:"1주차 완료 항목", items:[
+      "[브랜드 소개서](https://www.dropbox.com/scl/fi/kuacdl37d3j5sbuo9lrop/_-25-3.pptx?rlkey=gqqv4ob3ls06ysutautnhmbgo&st=0haj5ru6&dl=0) 숙지",
+      "[팀 자리배치도 및 연락처](https://docs.google.com/spreadsheets/d/1FPpLITOqZxIqOa71sJJU91lRn9MLM1EqspudF9fz26Q/edit?gid=0#gid=0) 확인",
+      "본인 담당 업무 범위와 1개월 목표를 대표 또는 리더와 설정",
+      "[근무 규정](#work) 페이지에서 출근 시각·휴가 신청 절차 확인",
+      "직원 전용 구매 혜택 안내 확인"]},
+    {t:"h2", id:"probation", text:"시용 기간 안내"},
+    {t:"ul", items:[
+      "입사 후 3개월은 시용 기간입니다. 세부 사항은 근로계약서를 기준으로 합니다.",
+      {text:"기간 중 팀장과 **2회 면담**을 진행합니다.", sub:["1차: 입사 후 6주 이내","2차: 수습 종료 3주 전","기대 역할 대비 진행 상황을 함께 확인하고, 본인 의견도 기록합니다."]},
+      "인사팀이 입사 **1주 · 1개월 · 2개월 · 3개월** 시점에 따로 만나 적응 상황과 어려운 점을 듣습니다."]},
+    {t:"callout", tone:"info", icon:"“", text:"면담은 서로의 기대를 맞추는 자리입니다.\n어려운 점이 있으면 면담을 기다리지 말고 언제든 먼저 말씀해 주세요."},
+    {t:"h2", id:"month1", text:"첫 달 마무리 점검"},
+    {t:"check", id:"m1", title:"첫 달 점검", items:[
+      "내 역할과 첫 3개월 기대 성과를 팀장과 합의했다","주요 업무 도구를 혼자 사용할 수 있다","업무별로 누구에게 물어야 하는지 안다"]}
+  ]
+},
+{
+  id:"about", group:"company", title:"회사 소개", glyph:"N",
+  desc:"회사 개요, 비전, 걸어온 길", updated:"2026.10.21", owner:"인사팀",
+  notion:"3ff9a9cf104b817985dcd8d2a02a1376", related:["people","first-month","guide"],
+  blocks:[
+    {t:"h2", id:"overview", text:"회사 개요"},
+    {t:"kv", rows:[
+      ["법인명","주식회사 언커먼홈 (Uncommonhome Inc.)"],
+      ["브랜드","narka (나르카)"],
+      ["사업 분야","헤어·바디케어 중심의 뷰티 & 라이프스타일"],
+      ["설립일","2022년 6월 15일"],
+      ["브랜드 런칭","2023년 8월 1일"],
+      ["주소","서울 종로구 필운대로 43, 301호 (태평타운) → 2026년 11월 말 마포구 이전 예정"],
+      ["대표전화","02-3789-1390"]
+    ]},
+    {t:"h2", id:"vision", text:"비전"},
+    {t:"quote", text:"즐거운 삶의 경험을 전하며 동시대의 소비자들이 열망하는 문화를 선도하는 Beauty & Lifestyle Company"},
+    {t:"h2", id:"history", text:"걸어온 길"},
+    {t:"timeline", rows:[
+      ["2022.06","주식회사 언커먼홈 설립"],
+      ["2022.08","Seed 투자 유치"],
+      ["2023.08","브랜드 narka 런칭"],
+      ["2023.09","Pre-Series A 투자 유치"],
+      ["2024.09","Series A 투자 유치 · 런칭 1년 만에 브랜드 가치 200억 원 이상"],
+      ["2025.04","투자 유치 · 브랜드 가치 300억 원"],
+      ["런칭 2년","매출 100억 원 달성 · 올리브영 전체 카테고리 매출 1위 · 일본 Qoo10 스타일링 카테고리 1위"],
+      ["2026","미국 얼타뷰티(Ulta Beauty) 입점 · 매출 2배 성장"]
+    ]},
+    {t:"h2", id:"more", text:"더 알아보기"},
+    {t:"ul", items:[
+      "[브랜드 소개서 (드롭박스)](https://www.dropbox.com/scl/fi/kuacdl37d3j5sbuo9lrop/_-25-3.pptx?rlkey=gqqv4ob3ls06ysutautnhmbgo&st=0haj5ru6&dl=0): 입사 첫 주에 꼭 읽어 주세요.",
+      "[창업자 인터뷰 (언론 기사)](https://woman.donga.com/people/article/all/12/5080876/1)"]},
+    {t:"h2", id:"values", text:"핵심가치"},
+    {t:"callout", tone:"soft", icon:"…", text:"현재 공식 문서를 정비하고 있습니다. 확정되면 이 자리에 게시합니다."}
+  ]
+},
+{
+  id:"people", group:"company", title:"조직과 담당자", glyph:"P",
+  desc:"조직도와 상황별 문의처", updated:"2026.10.21", updatedNote:"2026년 10월 기준 · 조직 변경 시 인사팀이 갱신합니다", owner:"인사팀",
+  notion:"3ff9a9cf104b8154b776e5772e337eab", related:["first-day","guide","work"],
+  blocks:[
+    {t:"h2", id:"org", text:"조직도"},
+    {t:"figure", title:"조직도 이미지", text:"노션 원본에 이미지로 게시되어 있습니다. 프로토타입에서는 이미지를 옮기지 않았습니다.", link:"3ff9a9cf104b8154b776e5772e337eab"},
+    {t:"h2", id:"whom", text:"이럴 땐 누구에게"},
+    {t:"table", head:["상황","문의처"], rows:[
+      ["근태·휴가·급여·증명서 발급","인사팀"],
+      ["수습 면담·고충 상담","인사팀"],
+      ["업무 메일 계정·노트북","인사팀"],
+      ["비용 처리·법인카드·지출결의","안도영 이사"],
+      ["Slack·Notion·Dropbox 계정, 기기 세팅","안도영 이사"],
+      ["사무실·택배 등 총무","안도영 이사 · 김권영 팀장"],
+      ["임직원 할인 구매","MD팀"],
+      ["업무 방식·우선순위","소속 팀장"],
+      ["사소한 사내 생활 질문","소속 팀원 또는 인사팀"]
+    ]}
+  ]
+},
+{
+  id:"work", group:"policy", title:"근무 규정", glyph:"R",
+  desc:"근무 시간, 휴가, 근태 보고, 급여, 정보보안", updated:"2026.10.21", owner:"인사팀",
+  notion:"3ff9a9cf104b81bea6e3fae7e63b4871", related:["benefits","first-month","guide"],
+  blocks:[
+    {t:"callout", tone:"warn", icon:"!", text:"**현행 운영 기준 안내**입니다. 취업규칙과 사내 규정은 현재 정비 중이며, 변경되면 공지 후 이 페이지를 갱신합니다. 개별 근로조건은 근로계약서를 기준으로 합니다."},
+    {t:"h2", id:"hours", text:"근무 시간"},
+    {t:"kv", rows:[
+      ["근무 형태","주 5일 · 1일 소정근로시간 7시간 40분 (휴게시간 80분 제외)"],
+      ["월요일","09:30~18:30 (전원 동일)"],
+      ["화~금요일","시차출퇴근제: 아래 4가지 중 본인이 선택 (별도 승인 절차 없음)\n08:00~17:00 / 09:00~18:00 / 10:00~19:00 / 11:00~20:00"],
+      ["공통 근무 시간","11:00~17:00 (회의·협업은 가급적 이 시간에 진행)"],
+      ["점심시간","13:00~14:20 (80분)"],
+      ["근태 기록","출근 시 FLEX 앱에서 출근 체크"]
+    ]},
+    {t:"callout", tone:"soft", icon:"i", text:"시차출퇴근제는 장거리 출퇴근과 개인 일정을 배려한 제도이므로 선택한 출근 시각은 꼭 지켜 주세요. 11시를 넘겨 출근하게 될 것 같으면 오전 반차 사용을 권장합니다."},
+    {t:"h2", id:"probation", text:"시용 기간"},
+    {t:"ul", items:["입사일로부터 3개월간 운영하며, 기간 중 급여는 100% 지급합니다.","면담 일정은 [첫 주 · 첫 달 가이드](#first-month)를 참고해 주세요."]},
+    {t:"h2", id:"leave", text:"휴가"},
+    {t:"table", head:["구분","내용"], rows:[
+      ["연차","입사일 기준 발생 · FLEX에서 신청\n입사 1년 미만: 1개월 개근 시 1일 (최대 11일)\n1년 이상 (80% 이상 출근): 15일, 3년 이상 근속 시 2년마다 1일 가산 (최대 25일)\n근거: 근로기준법 제60조"],
+      ["반차","오전·오후 반차 모두 출근 시각부터 실근무 4시간(점심시간 제외)을 채워야 합니다."],
+      ["여름 유급휴가","최대 5일, 법정 연차휴가와 별도 부여 (적용 시점은 개별 입사 조건에 따름) {!확인 필요: 사용 기간}"],
+      ["병가","개인 연차에서 사용"],
+      ["경조휴가","{!확인 필요}"],
+      ["재택근무","기준 정비 중 · 필요 시 팀장과 인사팀에 사전 협의"]
+    ]},
+    {t:"h3", text:"휴가 신청 절차"},
+    {t:"ol", items:[
+      "**사전 협의**: 팀원은 리더와 일정 협의, 리더는 COO에게 공유",
+      "**FLEX 신청**: FLEX 앱에서 연차·반차 신청",
+      {text:"**구글 캘린더 공유**: 참석자에 `all@uncmhm.com` 초대", sub:["제목 예시: `연차 홍길동` / `오전반차 홍길동`","연차·반차 모두 **'종일'**로 등록 (시간 지정 X)"]}]},
+    {t:"h3", text:"연차 사용 시 참고"},
+    {t:"ul", items:[
+      "올영세일·메가와리 기간은 긴급 이슈가 많으니 팀 내 일정과 미리 조율해 주세요.",
+      "입사 초기 연차가 아직 발생하지 않았는데 휴가가 필요하면 인사팀과 먼저 상의해 주세요.",
+      "리더는 특정 일자에 팀 내 휴가가 몰리지 않도록 조율합니다."]},
+    {t:"h2", id:"attendance", text:"근태 보고"},
+    {t:"table", head:["구분","절차"], rows:[
+      ["지각","팀원 → 리더 공유, 리더 → COO·대표 공유 (늦어도 11시까지 출근)"],
+      ["조퇴","리더와 COO에게 사전 공유"],
+      ["외근","팀원 → 리더, 리더 → COO 공유 후 Slack **경영지원 채널**에 일시·장소·내용 공유"],
+      ["출장 (숙박)","최소 1주 전 COO 사전 승인\n교통비 실비 · 숙박비 1박 10만 원 이내 · 식비 1일 5만 원 이내 (영수증 첨부, 가급적 법인카드 결제)"],
+      ["공휴일 근무","외부 촬영·팝업 지원 등으로 필요한 경우 대표 사전 승인 후 진행 {!확인 필요: 보상 기준}"]
+    ]},
+    {t:"callout", tone:"soft", icon:"i", text:"근태 관련 사항은 대표에게 직접 보고하지 않고 리더를 거쳐 공유합니다."},
+    {t:"h2", id:"pay", text:"급여"},
+    {t:"kv", rows:[
+      ["지급 방식","연봉 12분할, 매월 25일 지급 {!확인 필요: 휴일인 경우 처리 기준}"],
+      ["급여명세서","{!확인 필요: 확인 경로}"]
+    ]},
+    {t:"h2", id:"security", text:"정보보안"},
+    {t:"ul", items:[
+      "입사 시 근로계약서와 함께 **비밀유지계약서**를 작성합니다.",
+      "출시 전 제품, 거래처, 매출, 고객 데이터 등 회사 정보는 외부에 공유하지 않습니다.",
+      "연봉 등 개인별 근무조건은 대외비이므로 공개하지 않습니다.",
+      "개인 SNS에 업무 관련 내용을 올릴 때는 공개된 정보인지 먼저 확인합니다."]},
+    {t:"table", head:["항목","기준"], rows:[
+      ["개인 USB·외부 클라우드 사용","안도영 이사 사전 승인"],
+      ["Slack·Notion·Drive 외부 공유","COO 사전 승인"],
+      ["사내 회의 녹음·녹화","참석자 전원 동의"],
+      ["제품·샘플 촬영 후 SNS 업로드","마케팅팀 사전 승인"],
+      ["퇴사 시","장비·자료 전부 반납, 계정 삭제"]
+    ]}
+  ]
+},
+{
+  id:"benefits", group:"policy", title:"복리후생", glyph:"B",
+  desc:"성장·휴가·생활 지원, 직원 전용 구매, 야근 지원", updated:"2026.10.21", owner:"인사팀",
+  notion:"3ff9a9cf104b814384abcad694698734", related:["work","family","guide"],
+  blocks:[
+    {t:"callout", tone:"info", icon:"+", text:"일을 더 잘하기 위해 필요한 복지가 있다면 언제든 인사팀에 제안해 주세요."},
+    {t:"h2", id:"list", text:"복리후생 한눈에"},
+    {t:"table", head:["구분","내용","이용 방법"], rows:[
+      ["성장","업무 관련 교육비, 세미나·컨퍼런스 참석 지원","{!확인 필요}"],
+      ["성장","도서 구매비 지원","{!확인 필요}"],
+      ["휴가","유급 여름휴가 최대 5일 (법정 연차휴가와 별도)","FLEX 신청"],
+      ["근속","2년 근속 시 해외여행 및 건강검진 지원","{!확인 필요}"],
+      ["생활","자사 제품 임직원 할인 60%","아래 '직원 전용 구매' 참고"],
+      ["생활","매주 월요일 조식 (샌드위치)","전 직원 대상"],
+      ["생활","야근 석식 1인 13,000원 한도","아래 '야근 지원' 참고"],
+      ["생활","야근 택시비","아래 '야근 지원' 참고"],
+      ["생활","웰컴 패키지","{!확인 필요: 지급 시점}"],
+      ["생활","명절 상품권","설 · 추석"],
+      ["생활","커피 · 간식","사내 공용 비치, 자유롭게 이용"],
+      ["보상","마일스톤 인센티브: 전 구성원 대상, 국내·해외 매출, 온드미디어 팔로워 수 등 회사 마일스톤 달성 시 지급","세부 기준·시기는 회사 인센티브 운영 기준에 따름"]
+    ]},
+    {t:"h2", id:"shop", text:"직원 전용 구매"},
+    {t:"ol", items:[
+      "[구매 시트](https://docs.google.com/spreadsheets/d/1RdUjxTbBYqruM-LX-5i0sY08kEb2JEuHDzNR3Q59vc4/edit?gid=0#gid=0)에 구매 내역 기입",
+      "금액 입금",
+      "담당자에게 Slack DM으로 알림 (문의: MD팀)"]},
+    {t:"h2", id:"overtime", text:"야근 지원"},
+    {t:"table", head:["항목","지원 대상","기준"], rows:[
+      ["석식","20:30 이후까지 근무하는 경우","1인 13,000원 한도, 법인카드 결제\n여러 명이 함께 주문할 때는 배달비 절감을 위해 한 식당에서 주문\n일찍 출근했더라도 18~19시 석식은 지원하지 않습니다"],
+      ["택시비","22:30 이후까지 근무하는 경우","리더 또는 COO 사전 승인 필수 · 가급적 22:30 이전 퇴근 권장"]
+    ]},
+    {t:"callout", tone:"soft", icon:"i", text:"이 페이지에는 확정된 제도만 게시합니다. 복리후생과 비용 지원 기준은 현재 정비 중이며, 변경 시 공지합니다."}
+  ]
+},
+{
+  id:"family", group:"policy", title:"모성보호 · 육아지원 제도", glyph:"F",
+  desc:"임신·출산·육아 관련 법정 제도와 신청 방법", updated:"2026.10.20", owner:"인사팀", review:true,
+  notion:"3ff9a9cf104b817089b1e0165d27a240", related:["work","benefits","people"],
+  blocks:[
+    {t:"callout", tone:"danger", icon:"!", text:"**[게시 전 노무 검토 필요]** 법정 기준을 요약한 초안입니다. 최신 법 개정 반영 여부를 확인한 후 이 문구를 삭제해 주세요."},
+    {t:"callout", tone:"info", icon:"♡", text:"아래 제도는 모두 법으로 보장된 권리이며, 사용을 이유로 불이익을 줄 수 없습니다. 필요한 경우 인사팀과 먼저 편하게 상담해 주세요. 상담 내용은 업무 조정에 필요한 범위에서만 공유합니다."},
+    {t:"h2", id:"programs", text:"제도 안내"},
+    {t:"table", head:["제도","주요 내용","근거"], rows:[
+      ["임신기 근로시간 단축","임신 12주 이내 또는 32주 이후(고위험 임신은 전 기간) 1일 2시간 단축, 임금 삭감 없음","근로기준법 제74조"],
+      ["임신기 출퇴근 시간 변경","1일 소정근로시간을 유지하면서 출퇴근 시간 변경 신청 가능","근로기준법 제74조"],
+      ["태아검진 시간","정기 건강진단 시간을 유급으로 보장","근로기준법 제74조의2"],
+      ["난임치료휴가","연간 6일 (최초 2일 유급)","남녀고용평등법 제18조의3"],
+      ["출산전후휴가","90일(다태아 120일), 출산 후 45일(다태아 60일) 이상 확보","근로기준법 제74조"],
+      ["배우자 출산휴가","20일 유급, 출산일부터 120일 이내 사용, 분할 사용 가능","남녀고용평등법 제18조의2"],
+      ["육아휴직","만 8세 이하 또는 초등학교 2학년 이하 자녀, 최대 1년 (요건 충족 시 연장 가능), 분할 사용 가능","남녀고용평등법 제19조"],
+      ["육아기 근로시간 단축","만 12세 이하 또는 초등학교 6학년 이하 자녀, 주 15~35시간으로 단축","남녀고용평등법 제19조의2"]
+    ]},
+    {t:"h2", id:"apply", text:"신청 방법"},
+    {t:"ol", items:["인사팀과 사전 상담 (사용 시기·업무 조정 협의)","Flex에서 신청서 제출","인사팀이 급여·4대보험·고용보험 급여 신청 절차 안내"]}
+  ]
+},
+{
+  id:"guide", group:"work", title:"업무 운영 가이드", glyph:"G",
+  desc:"업무 도구, 사무실 생활, 비용 처리, 문서·양식", updated:"2026.10.21", owner:"인사팀",
+  notion:"3ff9a9cf104b8104b140c760168f6704", related:["people","work","benefits"],
+  blocks:[
+    {t:"callout", tone:"warn", icon:"→", text:"11월 말 마포구 사무실 이전 후 사무실 관련 정보를 일괄 갱신합니다."},
+    {t:"h2", id:"tools", text:"사내 업무 도구"},
+    {t:"table", head:["도구","용도","비고"], rows:[
+      ["**Slack**","사내 메신저","빠른 커뮤니케이션 · 외근 공유는 경영지원 채널"],
+      ["**Notion**","업무 매뉴얼, 회의록, 온보딩","팀별 위키 참고"],
+      ["**Google Workspace**","메일, 드라이브, 캘린더","회사 계정 제공 · 휴가 공유, 회의실 예약"],
+      ["**Dropbox**","대용량 파일 저장·공유","사진, 영상 등 대용량 파일 위주"],
+      ["**FLEX**","근태·인사","출근 체크, 휴가 신청, 지출결의"]
+    ]},
+    {t:"callout", tone:"soft", icon:"i", text:"**계정 생성 순서**: 입사 당일 노트북 세팅 → 회사 메일로 Slack · Notion · Dropbox 초대 메일 수신 → 가입\n계정·비품 문의는 안도영 이사에게 연락해 주세요."},
+    {t:"h2", id:"office", text:"사무실 생활"},
+    {t:"table", head:["항목","이용 방법","담당"], rows:[
+      ["사무실 위치","서울 종로구 필운대로 43, 301호 (태평타운) · 대표전화 02-3789-1390\n11월 말 마포구 이전 예정 {!확인 필요: 이전 주소}","안도영 이사"],
+      ["와이파이","입사 첫날 직접 안내 (보안상 페이지에 게시하지 않음)","안도영 이사"],
+      ["회의실 예약","구글 캘린더에서 회의실 리소스 예약","-"],
+      ["점심","사무실 근처 식당 또는 배달 주문 (개인 부담)","-"],
+      ["택배·사무실 관리","{!확인 필요}","안도영 이사 · 김권영 팀장"],
+      ["복합기·스캔","{!확인 필요}","안도영 이사"],
+      ["사무용품·명함 신청","{!확인 필요}","안도영 이사"]
+    ]},
+    {t:"h2", id:"expense", text:"비용 처리"},
+    {t:"callout", tone:"danger", icon:"!", text:"**모든 비용은 사전 승인이 원칙입니다.** 근무시간 외 저녁 식대, 야근 교통비, 규정되지 않은 비용 모두 사전 승인 후 사용해 주세요."},
+    {t:"table", head:["구분","방법","담당"], rows:[
+      ["개인 결제 후 정산","FLEX 앱에서 지출결의서 작성","안도영 이사"],
+      ["법인카드","사용 기준 정비 중 (확정 후 공지)","안도영 이사"],
+      ["B2B 거래처 결제","세금계산서 발행 확인 후 진행\n메일로 결제 내용·금액·결제 정보를 기재해 요청","현금: 안도영 이사\n카드: 김권영 팀장"],
+      ["퀵서비스","예원물류 ([카카오톡 채널](https://pf.kakao.com/_xbCFxbK)) · 회사카드 자동 결제\n사용 전 [퀵서비스 사용 대장](https://docs.google.com/spreadsheets/d/1x1-gOa-CaZWAje19CwCtaYuxt0xj9uy7Phuk3ivRqTo/edit?gid=0#gid=0) 기입 필수 · 3만 원 이상은 사전 승인","안도영 이사"]
+    ]},
+    {t:"h2", id:"docs", text:"문서·양식"},
+    {t:"ul", items:[
+      "**자주 쓰는 법인 서류** (사업자등록증 국문·영문, 법인통장 사본 등): 필요 시 안도영 이사에게 요청 {!웹 게시 제외: 원본 링크에 법인통장 사본 포함}",
+      "**업무 양식** (지출결의서, 출장보고서, 회의록, 업무보고 템플릿 등): 정비 후 게시 예정"]}
+  ]
+}
+];
+
+/* 메인 시작 순서: 노션 하위 페이지의 실제 항목에 연결 (없는 내용은 '준비 중') */
+const STEPS = [
+  {no:"STEP 01", title:"첫 출근 준비", page:"first-day", anchor:"arrive",
+   items:["첫날 09:30 출근","근무 장소·업무 장비 확인","회사 메일 초대장 가입","제출 서류는 입사일 전 메일 제출"], status:"info"},
+  {no:"STEP 02", title:"첫날 온보딩", page:"first-day", anchor:"day1",
+   items:["인사 오리엔테이션·계약서 작성","계정·장비 세팅","브랜드 교육·웰컴런치","팀장 첫 면담"], checks:["d1-hr","d1-it","d1-team","d1-self"]},
+  {no:"STEP 03", title:"첫 주 적응", page:"first-month", anchor:"week1",
+   items:["팀 업무 흐름·채널 이해","브랜드 소개서 숙지","1개월 목표 설정","인사팀장 1주 면담"], checks:["w1"]},
+  {no:"STEP 04", title:"첫 달 적응", page:"first-month", anchor:"month1",
+   items:["팀장 1차 면담 (6주 이내)","인사팀 1개월 면담","첫 달 마무리 점검"], checks:["m1"]},
+  {no:"STEP 05", title:"90일 온보딩", page:"first-month", anchor:"probation",
+   items:["시용 기간 3개월","팀장 2차 면담 (종료 3주 전)","인사팀 2·3개월 면담"], status:"partial"}
+];
+
+
+
+/* ---------- state (체크 표시는 각자 브라우저에만 남음) ---------- */
+const KEY = "narka-onboarding-v1";
+let state = {checks:{}, onlyOpen:false};
+try{ const s = JSON.parse(localStorage.getItem(KEY) || "null"); if(s && s.checks) state = Object.assign(state, s); }catch(e){}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+
+const byId = Object.fromEntries(PAGES.map(p => [p.id, p]));
+const chapNo = id => String(PAGES.findIndex(p => p.id === id) + 1).padStart(2, "0");
+const checkLists = {};
+PAGES.forEach(p => p.blocks.forEach(b => { if(b.t === "check") checkLists[b.id] = {page:p.id, items:b.items, title:b.title}; }));
+const ALL_LISTS = Object.keys(checkLists);
+function listTotal(ids){ return ids.reduce((n, id) => n + (checkLists[id] ? checkLists[id].items.length : 0), 0); }
+const pageLists = pid => ALL_LISTS.filter(id => checkLists[id].page === pid);
+const flagCount = p => JSON.stringify(p.blocks).split("{!").length - 1;
+const LAYERS = ["a","b","c","d","e"];
+const stack = n => LAYERS.slice(0, n).map(c => `<i class="${c}"></i>`).reverse().join("");
+function statusText(p){
+  const lists = pageLists(p.id);
+  if(lists.length) return `<span>체크리스트 ${listTotal(lists)}개</span>`;
+  if(p.review) return `<span class="alert-t">노무 검토 후 게시</span>`;
+  const f = flagCount(p); return f ? `<span class="flag-t">확인 필요 ${f}건</span>` : `<span>확정 내용</span>`;
+}
+
+/* ---------- inline formatting ---------- */
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function fmt(s){
+  let h = esc(s);
+  h = h.replace(/\{!([^}]*)\}/g, (_, t) => `<span class="flag">${t || "확인 필요"}</span>`);
+  h = h.replace(/\[([^\]]+)\]\((#[\w-]+)\)/g, (_, t, u) => `<a class="int" href="${u}" data-nav="${u.slice(1)}">${t}</a>`);
+  h = h.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, (_, t, u) => `<a class="ext" href="${u}" target="_blank" rel="noopener noreferrer">${t}</a>`);
+  h = h.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  h = h.replace(/`([^`]+)`/g, "<code>$1</code>");
+  return h.replace(/\n/g, "<br>");
+}
+const plain = s => String(s).replace(/\{!([^}]*)\}/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*|`/g, "");
+
+/* ---------- blocks ---------- */
+const CHECK_SVG = '<svg viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7"/></svg>';
+const items = arr => arr.map(it => typeof it === "string" ? `<li>${fmt(it)}</li>` : `<li>${fmt(it.text)}<ul>${it.sub.map(s => `<li>${fmt(s)}</li>`).join("")}</ul></li>`).join("");
+let secN = 0, stopN = 0;
+
+function renderBlock(b, p, ctx){
+  switch(b.t){
+    case "h2": secN++; return `<h2 id="sec-${b.id}"><span class="sn">${String(secN).padStart(2, "0")}</span>${esc(b.text)}</h2>`;
+    case "h3": return `<h3>${esc(b.text)}</h3>`;
+    case "ul": return `<ul>${items(b.items)}</ul>`;
+    case "ol": return `<ol>${items(b.items)}</ol>`;
+    case "quote": return `<blockquote class="vision-q">${fmt(b.text)}</blockquote>`;
+    case "callout": return `<div class="note-b ${b.tone === "soft" ? "" : b.tone}">${b.text.split("\n").map(l => `<p>${fmt(l)}</p>`).join("")}</div>`;
+    case "kv": return `<dl class="spec">${b.rows.map(r => `<div><dt>${esc(r[0])}</dt><dd>${fmt(r[1])}</dd></div>`).join("")}</dl>`;
+    case "table":
+      if(p.id === "benefits" && b.head.length === 3 && b.head[0] === "구분") return benefitSpread(b);
+      return `<div class="tbl"><table><thead><tr>${b.head.map(h => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${b.rows.map(r => `<tr>${r.map((c, i) => i === 0 ? `<th scope="row">${fmt(c)}</th>` : `<td>${fmt(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+    case "timeline":
+      if(p.id === "about") return `<ol class="years">${b.rows.map(r => `<li><span class="y">${esc(r[0])}</span><span class="w">${fmt(r[1])}</span></li>`).join("")}</ol>`;
+      return `<ol class="sched">${b.rows.map(r => `<li><span class="t">${esc(r[0])}</span><span>${fmt(r[1])}</span><span class="who">${esc(r[2] || "")}</span></li>`).join("")}</ol>`;
+    case "figure": return `<div class="figure"><b>${esc(b.title)}</b>${esc(b.text)}<br><a class="ext" href="${NOTION(b.link)}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;box-shadow:inset 0 -2px 0 var(--sun);display:inline-block;margin-top:10px;font-weight:500">노션 원본에서 보기</a></div>`;
+    case "tools":
+      if(ctx.toolsDone) return ""; ctx.toolsDone = true;
+      return `<div class="j-tools"><button class="tgl" data-act="only-open" aria-pressed="${state.onlyOpen}"><span class="sw"></span>체크하지 않은 항목만 보기</button><span>스스로 확인하는 용도이며, 체크 표시는 이 브라우저에만 남습니다.</span></div>`;
+    case "check": return journeyStop(b);
+  }
+  return "";
+}
+function journeyStop(b){
+  stopN++;
+  const n = b.items.length;
+  return `<div class="stops ${state.onlyOpen ? "only-open" : ""}"><div class="jstop" data-list="${b.id}">
+    <div class="layer strata" aria-hidden="true">${stack(Math.min(stopN, 5))}</div>
+    <div class="jbody"><h4>${esc(b.title)}<span>${n}개</span></h4>
+    ${b.items.map((it, i) => { const k = b.id + ":" + i, on = !!state.checks[k];
+      return `<label class="ci ${on ? "done" : ""}" for="c-${k}"><input type="checkbox" id="c-${k}" data-key="${k}" ${on ? "checked" : ""}><span class="bx">${CHECK_SVG}</span><span class="tx">${fmt(it)}</span></label>`; }).join("")}
+  </div></div></div>`;
+}
+function benefitSpread(b){
+  const cats = [];
+  b.rows.forEach(r => { let c = cats.find(x => x.name === r[0]); if(!c){ c = {name:r[0], rows:[]}; cats.push(c); } c.rows.push(r); });
+  return `<div class="bene">${cats.map(c => `<section class="bene-cat"><h3>${esc(c.name)}<small>${c.rows.length}가지</small></h3><div>${c.rows.map(r => `<div class="bene-item"><b>${fmt(r[1])}</b><span>${fmt(r[2])}</span></div>`).join("")}</div></section>`).join("")}</div>`;
+}
+
+/* ---------- views ---------- */
+const root = document.getElementById("root");
+const WHEN = ["입사 전", "첫날", "첫 주", "첫 달", "90일"];
+
+function homeView(){
+  const steps = STEPS.map((s, i) => `<a class="step" href="#${s.page}" data-nav="${s.page}" data-anchor="${s.anchor}">
+      <span class="stack strata" aria-hidden="true">${stack(i + 1)}</span>
+      <span class="when">${WHEN[i]}</span>
+      <h3>${esc(s.title)}</h3>
+      <ul>${s.items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+      ${s.status === "partial" ? `<span class="pend">90일 목표·점검표는 준비 중입니다</span>` : ""}
+      <span class="more">${esc(byId[s.page].title)} 보기 →</span></a>`).join("");
+  const docs = ["start", "company", "policy", "work"].map(gid => { const g = GROUPS.find(x => x.id === gid);
+    return `<div class="dgroup"><h3>${g.name}</h3><div class="dlist">${PAGES.filter(p => p.group === gid).map(p =>
+      `<a class="drow" href="#${p.id}" data-nav="${p.id}"><span class="n">${chapNo(p.id)}</span><div><b>${esc(p.title)}</b><small>${esc(p.desc)}</small></div><span class="st">${statusText(p)}</span></a>`).join("")}</div></div>`; }).join("");
+  return `
+  <section class="hero" aria-labelledby="welcome">
+    <div class="g"><div class="wrap hero-in">
+      <p class="kicker"><span>주식회사 언커먼홈 · 신규 입사자 안내</span><span>2026. 10.</span></p>
+      <h1 id="welcome"><span>Welcome</span><span class="to">to NARKA.</span></h1>
+      <div class="hero-note">
+        <p class="kor">나르카에 오신 것을 환영합니다.<br>새로운 시작을 함께할 수 있어 기쁩니다.</p>
+        <a class="hero-cta" href="#journey" data-scroll="journey">처음 오셨다면 이 순서대로 <span>↓</span></a>
+      </div>
+    </div></div>
+    <div class="strata hero-strata" aria-hidden="true"><i class="d"></i><i class="b"></i><i class="a"></i></div>
+  </section>
+
+  <section class="g"><div class="wrap letter">
+    <span class="side">인사팀이 드리는 글</span>
+    <div class="letter-body">
+      <p>새로 합류하신 분이 빠르게 자리 잡을 수 있도록 필요한 정보를 한곳에 모았습니다.</p>
+      <p>업무 시작 전 순서대로 확인해 주세요. 어려운 점이 있으면 면담을 기다리지 말고 언제든 먼저 말씀해 주세요.</p>
+      <p class="sign">나르카 인사팀</p>
+    </div>
+    <nav class="lines" aria-label="자주 찾는 문서"><small>자주 찾는 문서</small>
+      <a href="#first-day" data-nav="first-day">첫 출근 안내</a><span class="sl">/</span><a href="#work" data-nav="work">근무 규정</a><span class="sl">/</span><a href="#benefits" data-nav="benefits">복리후생</a><span class="sl">/</span><a href="#people" data-nav="people">조직과 담당자</a>
+    </nav>
+  </div></section>
+
+  <section class="g journey" id="journey"><div class="wrap">
+    <div class="sec-title"><h2>처음 오셨다면<br>이 순서대로</h2><p>단계마다 색의 층이 하나씩 쌓입니다. 각 단계를 누르면 해당 안내로 이동합니다.</p></div>
+    <div class="steps">${steps}</div>
+  </div></section>
+
+  <section class="g docs"><div class="wrap">
+    <div class="sec-title"><h2>온보딩 문서</h2><p>노션 원본의 분류 그대로 8편을 모았습니다.</p></div>
+    ${docs}
+  </div></section>
+
+  <section class="g"><div class="wrap vision">
+    <span class="vstack strata" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i><i class="e"></i></span>
+    <blockquote>즐거운 삶의 경험을 전하며 동시대의 소비자들이 열망하는 문화를 선도하는 Beauty &amp; Lifestyle Company</blockquote>
+    <p class="src">나르카의 비전 · <a href="#about" data-nav="about">회사 소개 읽기</a></p>
+  </div></section>
+
+  <section class="g"><div class="wrap help">
+    <h2>도움이 필요할 때</h2>
+    <dl><div><dt>근태·휴가·급여·제도</dt><dd>인사팀장</dd></div><div><dt>업무 방식·우선순위</dt><dd>소속 팀장</dd></div><div><dt>사소한 사내 생활 질문</dt><dd>인사팀장</dd></div></dl>
+  </div></section>
+  ${footer()}`;
+}
+
+function footer(){
+  return `<footer class="foot"><div class="strata" aria-hidden="true"><i class="c"></i><i class="d"></i><i class="e"></i></div>
+    <div class="g"><div class="wrap foot-in"><span class="mark">narka</span>
+    <p>최종 수정 2026.10.20 · 관리 인사팀 · 내용이 실제와 다르면 인사팀에 알려 주세요.<br>공식 로고·브랜드 가이드 적용 전 시안입니다.</p></div></div></footer>`;
+}
+
+function docView(p){
+  secN = 0; stopN = 0;
+  const ctx = {};
+  const idx = PAGES.indexOf(p), prev = PAGES[idx - 1], next = PAGES[idx + 1];
+  const g = GROUPS.find(x => x.id === p.group);
+  const heads = p.blocks.filter(b => b.t === "h2");
+  const status = (() => { const lists = pageLists(p.id);
+    if(lists.length) return `<span>체크리스트 ${listTotal(lists)}개 항목</span>`;
+    if(p.review) return `<span class="alert-t">노무 검토 후 게시</span>`;
+    const f = flagCount(p); return f ? `<span class="flag-t">확인 필요 ${f}건 표시</span>` : `<span class="ok-t">확정 내용</span>`; })();
+  const body = p.blocks.map(b => renderBlock(b, p, ctx)).join("");
+  return `
+  <section class="chap"><div class="g"><div class="wrap chap-in">
+    <div class="chap-side"><b>문서 ${chapNo(p.id)} / ${String(PAGES.length).padStart(2, "0")}</b><span>${g.name}</span></div>
+    <div class="chap-main"><div class="crumb"><a href="#home" data-nav="home">온보딩 홈</a></div>
+      <h1>${esc(p.title)}</h1><p class="lede">${esc(p.desc)}</p>
+      <div class="meta"><span>최종 수정 ${p.updated}</span><span>담당 ${p.owner}</span>${p.updatedNote ? `<span>${esc(p.updatedNote)}</span>` : ""}${status}<a href="${NOTION(p.notion)}" target="_blank" rel="noopener noreferrer">노션 원본 ↗</a></div></div>
+  </div></div><div class="strata" aria-hidden="true"><i class="b"></i><i class="a"></i></div></section>
+  <div class="g"><div class="wrap layout">
+    <nav class="rail" aria-label="온보딩 문서">
+      <a class="home-l" href="#home" data-nav="home">← 온보딩 홈</a>
+      <h4>온보딩 문서</h4>
+      <ol>${PAGES.map(x => `<li><a href="#${x.id}" data-nav="${x.id}" ${x.id === p.id ? 'aria-current="page"' : ""}><span>${chapNo(x.id)}</span>${esc(x.title)}</a></li>`).join("")}</ol>
+      ${heads.length > 1 ? `<div class="toc"><h4>이 문서에서</h4><ol>${heads.map((h, i) => `<li><a href="#${p.id}" data-nav="${p.id}" data-anchor="${h.id}"><span>${String(i + 1).padStart(2, "0")}</span>${esc(h.text)}</a></li>`).join("")}</ol></div>` : ""}
+    </nav>
+    <article class="content">
+      ${body}
+      ${pageLists(p.id).length ? `<p style="margin-top:16px"><button class="reset" data-act="reset" data-page="${p.id}">이 문서의 체크 지우기</button></p>` : ""}
+      <div class="rel">관련 문서${p.related.map(id => `<a href="#${id}" data-nav="${id}">${esc(byId[id].title)}</a>`).join("")}</div>
+      <nav class="next-up" aria-label="이전·다음 문서">${prev ? `<a href="#${prev.id}" data-nav="${prev.id}"><small>← 이전 문서</small><b>${esc(prev.title)}</b></a>` : `<a href="#home" data-nav="home"><small>← 처음으로</small><b>온보딩 홈</b></a>`}${next ? `<a class="nx" href="#${next.id}" data-nav="${next.id}"><small>다음 문서 →</small><b>${esc(next.title)}</b></a>` : `<a class="nx" href="#home" data-nav="home"><small>처음으로 →</small><b>온보딩 홈</b></a>`}</nav>
+    </article>
+  </div></div>
+  ${footer()}`;
+}
+
+function renderMenu(){
+  document.getElementById("menuGrid").innerHTML = `<a class="home-big" href="#home" data-nav="home">Welcome<br>to NARKA.</a>
+    <ol class="menu-list">${PAGES.map(p => `<li><a href="#${p.id}" data-nav="${p.id}" ${p.id === current ? 'aria-current="page"' : ""}><span class="n">${chapNo(p.id)}</span><b>${esc(p.title)}</b><span class="s">${GROUPS.find(g => g.id === p.group).name}</span></a></li>`).join("")}</ol>`;
+}
+
+/* ---------- header state ---------- */
+function onScroll(){
+  const hero = document.querySelector(".hero");
+  document.body.classList.toggle("at-hero", !!hero && hero.getBoundingClientRect().bottom > 64);
+}
+addEventListener("scroll", onScroll, {passive:true});
+addEventListener("resize", onScroll);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- router ---------- */
+let current = "home";
+function go(id, anchor){
+  if(!byId[id] && id !== "home") id = "home";
+  current = id;
+  closeOv("menu");
+  root.innerHTML = id === "home" ? homeView() : docView(byId[id]);
+  document.title = id === "home" ? "NARKA Onboarding" : byId[id].title + " · NARKA Onboarding";
+  try{ history.replaceState(null, "", "#" + id); }catch(e){}
+  onScroll();
+  if(anchor){ const el = document.getElementById("sec-" + anchor) || document.getElementById(anchor); if(el){ requestAnimationFrame(() => { el.scrollIntoView({block:"start"}); onScroll(); }); return; } }
+  scrollTo({top:0, behavior:"instant"});
+}
+
+document.addEventListener("click", e => {
+  const sc = e.target.closest("[data-scroll]");
+  if(sc){ e.preventDefault(); const t = document.getElementById(sc.dataset.scroll); if(t) t.scrollIntoView({behavior:reduce ? "auto" : "smooth"}); return; }
+  const a = e.target.closest("[data-nav]");
+  if(a && !a.closest("#searchOv")){ e.preventDefault(); go(a.dataset.nav, a.dataset.anchor); return; }
+  const cl = e.target.closest("[data-close]");
+  if(cl){ closeOv(cl.dataset.close); return; }
+  const act = e.target.closest("[data-act]");
+  if(!act) return;
+  if(act.dataset.act === "only-open"){
+    state.onlyOpen = !state.onlyOpen; save();
+    act.setAttribute("aria-pressed", state.onlyOpen);
+    document.querySelectorAll(".stops").forEach(s => s.classList.toggle("only-open", state.onlyOpen));
+  }
+  if(act.dataset.act === "reset"){
+    if(act.dataset.confirm !== "1"){ act.dataset.confirm = "1"; act.textContent = "한 번 더 누르면 지워집니다"; return; }
+    pageLists(act.dataset.page).forEach(id => checkLists[id].items.forEach((_, i) => delete state.checks[id + ":" + i]));
+    save(); go(current);
+  }
+});
+
+document.addEventListener("change", e => {
+  const cb = e.target.closest("input[data-key]"); if(!cb) return;
+  if(cb.checked) state.checks[cb.dataset.key] = true; else delete state.checks[cb.dataset.key];
+  save();
+  cb.closest(".ci").classList.toggle("done", cb.checked);
+});
+
+/* ---------- overlays ---------- */
+const menuOv = document.getElementById("menuOv"), searchOv = document.getElementById("searchOv");
+let lastFocus = null;
+function openOv(which){
+  lastFocus = document.activeElement;
+  if(which === "menu"){ renderMenu(); menuOv.hidden = false; menuOv.querySelector(".close-x").focus(); }
+  else { searchOv.hidden = false; q.value = ""; runSearch(); setTimeout(() => q.focus(), 10); }
+  document.body.style.overflow = "hidden";
+}
+function closeOv(which){
+  const ov = which === "menu" ? menuOv : searchOv;
+  if(ov.hidden) return;
+  ov.hidden = true; document.body.style.overflow = "";
+  if(lastFocus && lastFocus.focus) lastFocus.focus();
+}
+document.getElementById("menuBtn").addEventListener("click", () => openOv("menu"));
+document.getElementById("searchBtn").addEventListener("click", () => openOv("search"));
+
+/* ---------- search ---------- */
+const q = document.getElementById("q"), results = document.getElementById("results"), filters = document.getElementById("filters");
+let filter = "all", activeIdx = 0;
+function blockText(b){
+  if(b.text) return plain(b.text);
+  if(b.items) return b.items.map(i => typeof i === "string" ? plain(i) : plain(i.text) + " " + i.sub.map(plain).join(" ")).join(" ");
+  if(b.rows) return b.rows.map(r => r.map(plain).join(" ")).join(" ");
+  return "";
+}
+const INDEX = [];
+PAGES.forEach(p => { let sec = null; p.blocks.forEach(b => { if(b.t === "h2") sec = b; INDEX.push({page:p, sec, text:(b.t === "h2" ? b.text : blockText(b)) + (b.title ? " " + b.title : "")}); }); INDEX.push({page:p, sec:null, text:p.title + " " + p.desc}); });
+filters.innerHTML = [{id:"all", name:"전체"}].concat(GROUPS).map(g => `<button data-f="${g.id}" aria-pressed="${g.id === "all"}">${g.name}</button>`).join("");
+filters.addEventListener("click", e => { const b = e.target.closest("[data-f]"); if(!b) return; filter = b.dataset.f; filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); runSearch(); });
+function snippet(t, term){
+  const i = t.toLowerCase().indexOf(term.toLowerCase()); if(i < 0) return esc(t.slice(0, 90));
+  const s = Math.max(0, i - 30), part = t.slice(s, i + term.length + 60);
+  return (s > 0 ? "…" : "") + esc(part).replace(new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"), m => `<mark>${m}</mark>`) + "…";
+}
+function runSearch(){
+  const term = q.value.trim(); let hits;
+  if(!term) hits = PAGES.filter(p => filter === "all" || p.group === filter).map(p => ({page:p, sec:null, html:esc(p.desc)}));
+  else { const seen = new Set(); hits = [];
+    INDEX.forEach(r => { if(filter !== "all" && r.page.group !== filter) return; if(!r.text.toLowerCase().includes(term.toLowerCase())) return;
+      const key = r.page.id + (r.sec ? r.sec.id : ""); if(seen.has(key)) return; seen.add(key); hits.push({page:r.page, sec:r.sec, html:snippet(r.text, term)}); }); }
+  activeIdx = 0;
+  results.innerHTML = hits.length ? hits.slice(0, 30).map((h, i) => `<a class="s-r ${i === 0 ? "on" : ""}" href="#${h.page.id}" data-go="${h.page.id}" data-sec="${h.sec ? h.sec.id : ""}"><small>${chapNo(h.page.id)} · ${GROUPS.find(g => g.id === h.page.group).name}${h.sec ? " · " + esc(h.sec.text) : ""}</small><b>${esc(h.page.title)}</b><p>${h.html}</p></a>`).join("")
+    : `<div class="s-empty">'${esc(term)}'에 맞는 내용이 없습니다. 다른 단어로 찾아보세요.</div>`;
+}
+searchOv.addEventListener("click", e => { const r = e.target.closest("[data-go]"); if(r){ e.preventDefault(); closeOv("search"); go(r.dataset.go, r.dataset.sec || null); } });
+q.addEventListener("input", runSearch);
+q.addEventListener("keydown", e => {
+  const its = [...results.querySelectorAll(".s-r")];
+  if(e.key === "ArrowDown" || e.key === "ArrowUp"){ e.preventDefault(); if(!its.length) return; its[activeIdx].classList.remove("on"); activeIdx = (activeIdx + (e.key === "ArrowDown" ? 1 : -1) + its.length) % its.length; its[activeIdx].classList.add("on"); its[activeIdx].scrollIntoView({block:"nearest"}); }
+  if(e.key === "Enter" && its[activeIdx]){ e.preventDefault(); its[activeIdx].click(); }
+});
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape"){ closeOv("search"); closeOv("menu"); }
+  if((e.key === "/" || (e.key.toLowerCase() === "k" && (e.metaKey || e.ctrlKey))) && searchOv.hidden && !/input|textarea/i.test(document.activeElement.tagName)){ e.preventDefault(); openOv("search"); }
+});
+
+/* ---------- boot ---------- */
+const start = (location.hash || "").slice(1);
+go(byId[start] ? start : "home");
+</script>
+
+</body></html>

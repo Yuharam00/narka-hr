@@ -1,0 +1,288 @@
+<!doctype html><html><head><meta name="robots" content="noindex, nofollow"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>나르카 인사팀 공지</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* 레이아웃: 좌측 공지 목록 + 우측 공문 본문(문서 폭 고정). 흑백 단일 톤, 인쇄 공지문의 위계를 그대로 옮김 */
+:root{
+  --bg:#ffffff;
+  --paper:#ffffff;
+  --side:#f6f6f4;
+  --ink:#141414;
+  --sub:#5a5a58;
+  --mute:#8c8c89;
+  --line:#dcdcd8;
+  --rule:#141414;
+  --head:#f2f2ef;
+  --hover:#ececE8;
+  --logo-filter:none;
+  --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121211;--paper:#121211;--side:#1a1a19;--ink:#ececE9;--sub:#a9a9a5;--mute:#7c7c78;--line:#30302e;--rule:#ececE9;--head:#1f1f1d;--hover:#242422;--logo-filter:invert(1);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121211;--paper:#121211;--side:#1a1a19;--ink:#ececE9;--sub:#a9a9a5;--mute:#7c7c78;--line:#30302e;--rule:#ececE9;--head:#1f1f1d;--hover:#242422;--logo-filter:invert(1);color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:anywhere}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+.shell{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:100vh}
+/* 목록 */
+.side{background:var(--side);border-right:1px solid var(--line);padding-block:28px 24px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:20px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.brand{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:2px solid var(--rule)}
+.brand img{height:22px;width:auto;filter:var(--logo-filter)}
+.brand span{font-size:12px;color:var(--mute);letter-spacing:.02em}
+.count{margin:22px 0 10px;font-size:12px;color:var(--mute)}
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.list a{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;padding:12px 10px;margin:0 -10px;text-decoration:none;border-radius:4px}
+.list a:hover{background:var(--hover)}
+.list a[aria-current="page"]{background:var(--paper);box-shadow:inset 2px 0 0 var(--rule)}
+.list .no{font-family:var(--mono);font-size:12px;color:var(--mute);grid-row:span 2;padding-top:2px;font-variant-numeric:tabular-nums}
+.list .t{font-weight:600;font-size:14px;line-height:1.45}
+.list .m{font-size:12px;color:var(--mute)}
+.side-foot{margin-top:28px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);line-height:1.6}
+
+/* 본문 */
+.main{padding-block:44px 80px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.doc{max-width:760px;margin:0 auto}
+.doc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:10px;border-bottom:2px solid var(--rule)}
+.doc-head img{height:24px;width:auto;filter:var(--logo-filter)}
+.doc-no{font-size:13px;font-weight:600;font-family:var(--sans)}
+.doc-no b{font-family:var(--mono);font-weight:500}
+h1{font-size:30px;line-height:1.3;font-weight:700;letter-spacing:-.01em;margin:44px 0 14px;text-wrap:balance}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--mute);margin-bottom:28px}
+.lead{font-size:17px;font-weight:600;line-height:1.6;margin:0 0 14px;text-wrap:pretty}
+.intro{color:var(--ink);margin:0 0 8px;max-width:66ch}
+h2{font-size:18px;font-weight:700;margin:44px 0 14px;scroll-margin-top:24px}
+.tbl{overflow-x:auto;margin:0 0 8px}
+table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+th,td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid var(--line)}
+thead th{background:var(--head);color:var(--sub);font-weight:600;border-top:2px solid var(--rule);font-size:13px}
+tbody th{font-weight:600;white-space:nowrap;width:1%}
+.ex{display:block;color:var(--sub);font-size:13px}
+.note{font-size:13px;color:var(--sub);margin:10px 0 0;line-height:1.65}
+.note b{color:var(--ink);font-weight:600}
+ol.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+ol.steps li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:0}
+ol.steps .n{font-weight:700;font-variant-numeric:tabular-nums}
+ol.steps strong{font-weight:700;margin-right:8px}
+ul.dash{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+ul.dash li{position:relative;padding-left:16px}
+ul.dash li::before{content:"-";position:absolute;left:0;color:var(--sub)}
+ul.dash strong{font-weight:700}
+.two{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--rule);border-bottom:1px solid var(--line)}
+.two>div{padding:12px 14px;min-width:0}
+.two>div+div{border-left:1px solid var(--line)}
+.two h3{font-size:13px;font-weight:600;color:var(--sub);margin:0 0 8px}
+.two ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:14px}
+.faq{display:flex;flex-direction:column;gap:16px}
+.faq dt{font-weight:600}
+.faq dd{margin:2px 0 0;color:var(--sub)}
+.close{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px;font-size:14px}
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.mail{font-family:var(--mono);font-size:13px;user-select:all}
+.copy{border:1px solid var(--line);background:transparent;border-radius:4px;padding:2px 10px;font-size:12px;cursor:pointer;color:var(--sub)}
+.copy:hover{border-color:var(--ink);color:var(--ink)}
+.att{color:var(--sub)}
+.sign{margin-top:36px;text-align:center;display:flex;flex-direction:column;gap:4px}
+.sign .d{color:var(--sub);font-size:14px;font-variant-numeric:tabular-nums}
+.sign .c{font-weight:700;font-size:17px}
+.sign .r{font-weight:700;font-size:16px}
+.pager{margin-top:56px;display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:16px;font-size:13px}
+.pager a{text-decoration:none;color:var(--sub);display:flex;flex-direction:column;gap:2px;max-width:48%}
+.pager a:hover{color:var(--ink)}
+.pager a span{font-size:12px;color:var(--mute)}
+.pager .nx{text-align:right;margin-left:auto}
+
+/* 모바일: 목록을 상단 가로 스크롤 대신 접이식 선택으로 */
+.mbar{display:none}
+@media (max-width:860px){
+  .shell{grid-template-columns:1fr}
+  .side{display:none}
+  .mbar{display:flex;flex-direction:column;gap:10px;padding-block:18px 0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .mbar label{font-size:12px;color:var(--mute)}
+  .mbar select{width:100%;font:inherit;font-size:14px;padding:10px 12px;border:1px solid var(--line);border-radius:4px;background:var(--paper);color:var(--ink)}
+  .main{padding-block:24px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  h1{font-size:24px;margin-top:32px}
+  .lead{font-size:16px}
+  tbody th{white-space:normal;width:auto;min-width:6em}
+  .two{grid-template-columns:1fr}
+  .two>div+div{border-left:0;border-top:1px solid var(--line)}
+}
+@media (prefers-reduced-motion:no-preference){.doc{animation:in .25s ease-out both}@keyframes in{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}}
+</style>
+
+<div class="shell">
+  <aside class="side" aria-label="공지 목록">
+    <div class="brand"><img src="data:image/png;base64,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" alt="narka"><span>인사팀 공지</span></div>
+    <p class="count" id="count"></p>
+    <ul class="list" id="list"></ul>
+    <div class="side-foot">주식회사 언커먼홈 인사팀<br>문의 유하람 팀장</div>
+  </aside>
+  <div>
+    <div class="mbar">
+      <label for="pick">공지 선택</label>
+      <select id="pick"></select>
+    </div>
+    <main class="main"><article class="doc" id="doc"></article></main>
+  </div>
+</div>
+
+<script>
+const MAIL = 'haram@uncmhm.com';
+const N = [
+{
+  id:'n004', no:'2026-004', date:'2026. 10. 27.', title:'퇴직 절차 안내',
+  lead:'퇴직 희망일 30일 전까지 의사를 알리고, 14일 전까지 사직서를 상신해 주세요.',
+  intro:['인수인계와 자산 반납, 퇴직 정산이 빠짐없이 진행될 수 있도록 퇴직 절차를 정리했습니다.','함께한 시간이 잘 마무리될 수 있도록 아래 내용을 확인해 주세요.'],
+  body:[
+    {h:'1. 주요 일정'},
+    {table:{head:['구분','기한'],rows:[['퇴사 의사 표명','퇴직 희망일 최소 30일 전'],['사직서 상신','퇴직일 최소 14일 전 (플렉스 전자결재)'],['자산 반납·계정 차단','최종 근무일'],['퇴직 정산','퇴직일로부터 14일 이내 지급']]}},
+    {note:'※ 최종 근무일은 실제로 근무하는 마지막 날, 퇴직일은 근로관계가 끝나는 날입니다. 잔여 연차를 사용하는 경우 두 날짜가 다를 수 있습니다.'},
+    {h:'2. 면담 절차'},
+    {steps:[['조직장 면담','소속 조직장과 면담해 퇴직일을 협의합니다.'],['인사팀장 면담','퇴직일과 최종 근무일을 확정하고, 퇴직 절차를 안내받습니다. (필수)'],['대표이사 면담','필요한 경우 진행합니다.']]},
+    {note:'※ 조직장(팀장)이 퇴직하는 경우 인사팀장 면담부터 시작합니다.'},
+    {h:'3. 사직서 상신과 제출 서류'},
+    {dash:['플렉스 워크플로우의 「사직서」 양식으로 상신하며, 아래 서류를 함께 첨부합니다.','결재라인: 소속 조직장 → 인사팀장 → 대표이사 (작성자가 조직장인 경우 인사팀장 → 대표이사)']},
+    {gap:true},
+    {table:{head:['서류','제출 방법','대상'],rows:[['사직서','플렉스 전자결재 「사직서」 양식','전원'],['영업비밀 준수 각서','자필 서명 후 스캔(PDF)해 전자결재 첨부<span class="ex">양식은 사직서 결재문서에서 다운로드</span>','전원'],['업무 인수인계서','전자결재 첨부','전원'],['회사 지급 자산 반납확인서','최종 근무일 인사팀장에게 자산 반납 후 상호 서명','전원'],['IRP 계좌 사본','전자결재 첨부','퇴직금 대상자']]}},
+    {h:'4. 최종 근무일에 해 주세요'},
+    {dash:['노트북·아이맥 등 전산장비와 주변기기(충전기 등), 그 밖에 회사가 지급한 물품을 모두 반납합니다.','업무 자료는 팀 공용 저장소로 옮기고, 인수인계를 마친 뒤 반납합니다.','개인 자료는 미리 백업·정리해 주세요. 장비 초기화는 임의로 하지 않고 인사팀 확인 후 진행합니다.','업무용 메일과 협업 도구 계정은 최종 근무일 퇴근 시점에 차단됩니다.','재직 중 취득한 회사의 업무 자료와 정보는 퇴직 후에도 외부로 가져가거나 사용할 수 없습니다.']},
+    {h:'5. 퇴직 정산과 4대보험'},
+    {dash:['퇴직월 급여(일할 계산), 미사용 연차휴가 수당, 퇴직금은 퇴직일로부터 14일 이내 지급합니다.','잔여 연차 일수와 정산 예상 금액은 최종 근무일 전까지 인사팀이 개별 안내합니다. 이견이 있으면 안내받은 기한 안에 회신해 주세요.','퇴직금은 계속근로기간 1년 이상인 경우 지급하며, 본인 명의 개인형퇴직연금(IRP) 계좌로 지급합니다.','4대보험 자격상실일은 퇴직일 다음 날로 신고합니다. 국민연금과 건강보험료는 그날이 속한 달부터 지역가입자 또는 새 직장 기준으로 부과됩니다.']},
+    {h:'6. 자주 묻는 질문'},
+    {faq:[['30일 전에 알리지 못하면 퇴직할 수 없나요?','퇴직은 가능합니다. 다만 인수인계를 위해 정해지는 대로 최대한 빨리 조직장과 인사팀에 알려 주세요.'],['경력증명서와 원천징수영수증은 언제 받을 수 있나요?','퇴직 후 발급합니다. 필요하면 인사팀에 요청해 주세요.'],['입사 1년이 안 됐는데 IRP 계좌가 필요한가요?','퇴직금 지급 대상이 아니므로 제출하지 않아도 됩니다.']]}
+  ],
+  ask:'퇴직 절차와 퇴직 관련 증빙서류는 인사팀 유하람 팀장에게 문의해 주세요.',
+  att:'회사 지급 자산 반납확인서 양식 1부.'
+},
+{
+  id:'n003', no:'2026-003', date:'2026. 10. 27.', title:'시용평가 운영 방식 변경 안내',
+  lead:'2026년 9월 1일 이후 입사자부터 시용기간 중 평가를 두 번 진행합니다.',
+  intro:['새로 합류한 동료가 회사에 잘 자리 잡을 수 있도록 시용기간 평가 방식을 일부 바꾸었습니다.','평가 일정에 맞춰 팀장님들의 작성과 면담에 협조 부탁드립니다.'],
+  body:[
+    {h:'1. 무엇이 바뀌나요'},
+    {table:{head:['구분','기존','변경'],rows:[['평가 방식','본인 평가 후 팀장 검토','팀장 작성 → 면담으로 결과 공유 → 팀원 의견 기재 및 서명'],['평가 횟수','1회','시용기간 중 2회']]}},
+    {h:'2. 적용 대상과 평가 일정'},
+    {table:{head:['구분','내용'],rows:[['적용 대상','2026. 9. 1. 이후 입사자'],['1차(중간) 평가','입사 후 6주 이내'],['2차(최종) 평가','시용기간 만료 3주 전까지']]}},
+    {h:'3. 진행 절차'},
+    {steps:[['','인사팀이 평가 기한 1주 전에 대상자와 평가표를 메일로 보내드립니다.'],['','팀장님이 평가표를 작성합니다.'],['','팀원과 면담해 결과를 공유하고, 팀원 의견과 서명을 받습니다.'],['','기한 안에 메일 회신으로 제출합니다.']]},
+    {h:'4. 꼭 지켜 주세요'},
+    {dash:['평가근거란에는 직접 확인한 사실(업무명, 일자, 결과)을 적어 주세요.','1차 평가의 보완 사항은 면담에서 구체적으로 전달해 주세요. 2차 평가 때 개선 여부를 함께 확인합니다.','팀원은 면담에서 평가 결과에 대한 의견을 자유롭게 적을 수 있으며, 서명은 결과를 전달받았다는 확인의 의미입니다.','법정휴가·병가 등 정당한 사유로 근무하지 못한 기간은 평가에 불리하게 반영하지 않습니다.','평가표는 인사 기밀 자료입니다. 평가 관계자 외에는 공유하지 말아 주세요.']},
+    {h:'5. 자주 묻는 질문'},
+    {faq:[['8월 31일까지 입사한 구성원은 어떻게 하나요?','시용기간 만료가 임박한 인원은 기존 방식대로 1회 평가로 마무리했습니다. 그 밖의 인원은 인사팀에서 개별로 안내드립니다.'],['1차 평가 기한이 이미 지난 9월 입사자는요?','인사팀에서 해당 팀장님께 따로 연락드립니다. 안내받은 일정에 맞춰 바로 진행해 주세요.'],['일정상 면담이 어려우면 어떻게 하나요?','평가마다 면담하는 것이 원칙입니다. 부득이한 경우 기한 전에 인사팀과 먼저 상의해 주세요.'],['평가 결과는 어디에 쓰이나요?','본채용 여부를 판단하는 근거로 활용됩니다.']]}
+  ],
+  ask:'궁금한 점은 인사팀 유하람 팀장에게 편하게 문의해 주세요.'
+},
+{
+  id:'n002', no:'2026-002', date:'2026. 10. 27.', title:'연봉 갱신 평가 제도 시행 안내',
+  lead:'앞으로 연봉은 갱신일에 조정하는 방식이 아니라, 한 해의 성과와 역할을 평가한 결과에 따라 결정됩니다.',
+  intro:['그동안 연봉은 갱신일에 맞춰 조정해 왔습니다.','앞으로는 구성원 한 분 한 분이 만든 성과와 맡아 온 역할을 기준에 따라 돌아보고, 그 결과를 보상에 반영하려 합니다.'],
+  body:[
+    {h:'1. 무엇이 달라지나요'},
+    {table:{head:['구분','기존','변경'],rows:[['갱신 주기','직전 계약 만료일 기준 연 1회','직전 계약 만료일 기준 연 1회 (변동 없음)'],['결정 방식','갱신일에 조정','평가 절차를 거쳐 결정'],['평가 절차','없음','본인평가 → 조직장 평가 → 인사위원회 심의 → 대표이사 확정'],['평가 내용','-','성과, 직무 역량, 태도·협업, 조직 기여, 근태'],['결과 안내','-','조직장·인사팀 면담 후 연봉계약 체결']]}},
+    {note:'※ 인사위원회는 대표이사, COO, 인사팀장으로 구성됩니다.'},
+    {note:'<b>※ 연봉 갱신일이란</b> 직전에 체결한 연봉계약(근로계약서)의 연봉 적용기간이 끝나는 날의 다음 날을 말합니다. 시용기간 종료 후 연봉을 새로 정해 계약한 경우에는 그 계약의 만료일을 기준으로 하며, 갱신일 전에 연봉을 별도로 조정한 경우에도 해당 계약의 적용기간을 따릅니다.'},
+    {h:'2. 이렇게 진행됩니다'},
+    {p:'갱신일이 속한 달의 전월에 아래 순서로 진행합니다.'},
+    {steps:[['대상 안내','인사팀이 갱신 대상자와 조직장에게 갱신일과 일정을 개별 안내합니다.'],['본인평가','안내받은 날부터 1주일 안에 본인평가서를 작성해 제출합니다.'],['조직장 평가','조직장이 성과와 역량을 평가합니다.'],['인사위원회 심의','평가 결과를 검토해 연봉을 산정하고, 대표이사가 최종 확정합니다.'],['결과 면담','조직장과 인사팀이 면담으로 결과를 안내합니다.'],['재검토 요청','결과에 이견이 있으면 면담 후 7일 안에 인사팀에 재검토를 요청할 수 있습니다.'],['연봉계약 체결','확정된 연봉으로 연봉계약서를 작성하며, 새 연봉은 갱신일부터 1년간 적용합니다.']]},
+    {h:'3. 적용 시기'},
+    {dash:['2026년 10월 갱신 대상자부터 적용합니다.','10월 갱신 대상자는 제도가 시행된 달에 갱신일이 도래하여 부득이하게 갱신월 당월에 평가를 진행하고 있습니다. 해당 구성원께는 본인평가서 작성을 이미 개별 요청드렸습니다.','11월 갱신 대상자는 남은 기간이 짧아 인사팀에서 일정을 개별 안내드립니다.','12월 갱신 대상자부터는 위 절차에 따라 갱신월 전월에 평가를 진행합니다.']},
+    {h:'4. 꼭 알아 두세요'},
+    {dash:['평가는 사실과 근거를 기준으로 합니다. 본인평가서에 한 해 동안의 성과를 구체적으로 적어 주세요.','연봉 확정이 갱신일보다 늦어지면 새 계약 체결 전까지 기존 연봉으로 지급하고, 확정 후 차액은 갱신일 기준으로 소급해 다음 정기급여일에 정산합니다.','연봉 적용기간이 계약서에 명시되지 않은 경우, 인사팀이 계약 내용을 확인해 갱신일을 개별 안내합니다.','평가 내용은 평가자와 인사위원회만 열람하며, 대외비로 관리합니다.']},
+    {h:'5. 자주 묻는 질문'},
+    {faq:[['갱신일이 바뀌나요?','바뀌지 않습니다. 지금처럼 직전 연봉계약 기간이 끝나는 시점에 1년마다 갱신합니다.'],['평가 결과에 따라 연봉이 줄어들 수도 있나요?','연봉이 줄어드는 경우는 없습니다. 평가 결과에 따라 인상 폭(동결 포함)이 달라집니다.'],['휴직이나 휴가 기간이 길었으면 어떻게 되나요?','불리하게 반영하지 않습니다. 실제 근무한 기간을 기준으로 평가합니다.'],['조직장이 바뀌어 함께 일한 기간이 짧아요.','함께 일한 기간이 3개월이 안 되면 이전 조직장의 의견도 함께 참고합니다. 이전 조직장이 퇴사한 경우에는 인사위원회가 확인합니다.'],['갱신일이 이미 지났는데 평가를 진행하나요?','제도 시행 초기에 갱신일이 도래한 구성원은 갱신일 이후에 평가가 진행될 수 있습니다. 이 경우에도 차액은 갱신일 기준으로 소급 정산되므로 불이익은 없습니다.'],['첫 연봉계약 기간이 아직 끝나지 않았어요.','현재 연봉계약 기간이 끝나는 시점에 첫 평가를 진행합니다.']]}
+  ],
+  ask:'궁금한 점은 인사팀 유하람 팀장에게 편하게 문의해 주세요.'
+},
+{
+  id:'n001', no:'2026-001', date:'2026. 10. 26.', title:'팀 업무추진비 지원 시행 안내',
+  lead:'11월부터 팀별로 팀장 포함 구성원 1인당 월 5만원의 ‘팀 업무추진비’를 지원합니다.',
+  intro:['팀원끼리 함께 식사하고, 회의하고, 커피 한 잔 나누는 시간을 회사가 지원하고자 마련했습니다.','아래 기준을 확인하시고, 팀장님 혹은 파트장님은 정산 절차를 꼭 숙지해 주시기 바랍니다.'],
+  body:[
+    {h:'1. 지원 기준'},
+    {table:{head:['구분','내용'],rows:[['적용 시작','2026년 11월 1일 사용분부터'],['지원 금액','팀장 포함 구성원 1인당 월 5만원 (매월 1일 재직 인원 기준)<span class="ex">예) 팀장 1명 + 팀원 4명 → 월 25만원</span>'],['사용 용도','팀 회식, 팀 회의 중 식음료, 팀원 간 커피챗'],['결제 방법','공용 법인카드로만 결제'],['사용 시간','평일 21시 이전 결제분만 인정 (주말·공휴일 결제 불인정)'],['이월','불가 (당월 미사용분은 소멸)'],['정산','팀장 혹은 파트장(1인 조직은 본인)이 월 1회 사용내역서와 영수증 제출']]}},
+    {note:'※ 월중 입사자는 다음 달부터 한도에 반영되며, 월중 퇴사자가 있어도 당월 한도는 그대로 유지됩니다.'},
+    {h:'2. 사용 가능 / 불가 항목'},
+    {two:[['사용 가능',['팀 회식 (점심·저녁)','팀 회의 중 식사·음료·다과','팀원 간 커피챗']],['사용 불가',['개인 용도 결제','외부 거래처·지인 등 외부인 비용','상품권·기프티콘 등 현금성 상품 구매','21시 이후, 주말·공휴일 결제','유흥업소 결제','한도를 넘기기 위한 분할 결제']]]},
+    {h:'3. 정산 절차'},
+    {steps:[['결제','공용 법인카드로 결제합니다. 카드는 COO에게 대여하여 사용 후 당일 반납합니다.'],['영수증 보관','카드 영수증을 결제 건별로 보관합니다.'],['제출','팀장 혹은 파트장(1인 조직은 본인)이 사용내역서와 영수증을 다음 달 5영업일 이내 인사팀으로 제출합니다. (11월분 마감: 12월 7일(월))'],['확인·처리','인사팀 확인 후 경영팀에서 비용 처리합니다.']]},
+    {h:'4. 꼭 지켜 주세요'},
+    {dash:['<strong>회식 참석은 자율입니다.</strong> 참석 여부로 인한 불이익은 없으며, 점심 회식이나 업무시간 중 커피챗도 적극 활용해 주세요.','<strong>지원 기준을 벗어난 금액은 결제자가 반환합니다.</strong> 21시 이후·주말·공휴일 결제분 등은 해당 월 정산 마감일까지 회사 계좌로 반환해 주세요. 급여에서 공제하지 않습니다.','<strong>같은 사유가 반복되면</strong> 인사팀이 해당 팀과 사용 방식을 함께 점검합니다.','본 기준은 시범 운영 후 보완될 수 있으며, 변경 시 다시 안내드리겠습니다.']},
+    {h:'5. 자주 묻는 질문'},
+    {faq:[['다 쓰지 못한 금액은 다음 달로 넘어가나요?','넘어가지 않습니다. 당월 미사용분은 소멸됩니다.'],['팀원이 저 혼자인데 정산은 어떻게 하나요?','본인이 직접 사용내역서와 영수증을 제출하시면 됩니다.'],['공용 법인카드는 어디서 받나요?','COO에게 대여 후, 사용한 당일 반납해 주세요.']]}
+  ],
+  ask:'궁금한 점은 인사팀 유하람 팀장에게 편하게 문의해 주세요.',
+  att:'법인카드 사용내역서 양식 1부 / 조직도 1부.'
+}
+];
+
+const LOGO = document.querySelector('.brand img').src;
+const $ = s => document.querySelector(s);
+
+function block(b){
+  if(b.h) return `<h2>${b.h}</h2>`;
+  if(b.p) return `<p class="intro">${b.p}</p>`;
+  if(b.gap) return `<div style="height:10px"></div>`;
+  if(b.note) return `<p class="note">${b.note}</p>`;
+  if(b.table){
+    const {head,rows}=b.table;
+    return `<div class="tbl"><table><thead><tr>${head.map(h=>`<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${
+      rows.map(r=>`<tr><th scope="row">${r[0]}</th>${r.slice(1).map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  }
+  if(b.steps) return `<ol class="steps">${b.steps.map(([k,v],i)=>`<li><span class="n">${i+1})</span><span>${k?`<strong>${k}</strong>`:''}${v}</span></li>`).join('')}</ol>`;
+  if(b.dash) return `<ul class="dash">${b.dash.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+  if(b.two) return `<div class="two">${b.two.map(([t,xs])=>`<div><h3>${t}</h3><ul>${xs.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')}</div>`;
+  if(b.faq) return `<dl class="faq">${b.faq.map(([q,a])=>`<div><dt>${q}</dt><dd>${a}</dd></div>`).join('')}</dl>`;
+  return '';
+}
+
+function render(id){
+  const i = Math.max(0, N.findIndex(n=>n.id===id));
+  const n = N[i];
+  const prev = N[i+1], next = N[i-1];
+  $('#doc').innerHTML = `
+    <header class="doc-head"><img src="${LOGO}" alt="narka"><span class="doc-no">인사팀 공지 <b>${n.no}</b></span></header>
+    <h1>${n.title}</h1>
+    <div class="meta"><span>공지일 ${n.date}</span><span>발신 주식회사 언커먼홈</span></div>
+    <p class="lead">${n.lead}</p>
+    ${n.intro.map(x=>`<p class="intro">${x}</p>`).join('')}
+    ${n.body.map(block).join('')}
+    <div class="close">
+      <div class="contact"><span>${n.ask}</span></div>
+      <div class="contact"><span class="mail">${MAIL}</span><button class="copy" type="button" id="cp">주소 복사</button></div>
+      ${n.att?`<div class="att">붙임&nbsp;&nbsp;${n.att}&nbsp;&nbsp;끝.</div>`:`<div class="att">끝.</div>`}
+    </div>
+    <div class="sign"><span class="d">${n.date}</span><span class="c">주식회사 언커먼홈</span><span class="r">대표이사 최다예</span></div>
+    <nav class="pager" aria-label="다른 공지">
+      ${prev?`<a href="#${prev.id}"><span>이전 공지 ${prev.no}</span>${prev.title}</a>`:''}
+      ${next?`<a class="nx" href="#${next.id}"><span>다음 공지 ${next.no}</span>${next.title}</a>`:''}
+    </nav>`;
+  document.title = '나르카 인사팀 공지';
+  document.querySelectorAll('#list a').forEach(a=>a.removeAttribute('aria-current'));
+  document.querySelectorAll('#list a').forEach(a=>{ if(a.dataset.id===n.id) a.setAttribute('aria-current','page'); });
+  $('#pick').value = n.id;
+  $('#cp').addEventListener('click', e=>{
+    const b=e.currentTarget;
+    const done=()=>{b.textContent='복사됨';setTimeout(()=>b.textContent='주소 복사',1500)};
+    try{ navigator.clipboard.writeText(MAIL).then(done).catch(()=>sel()); }catch(_){ sel(); }
+    function sel(){const r=document.createRange();r.selectNodeContents(document.querySelector('.mail'));const s=getSelection();s.removeAllRanges();s.addRange(r);}
+  });
+}
+
+$('#count').textContent = `전체 ${N.length}건`;
+$('#list').innerHTML = N.map(n=>`<li><a href="#${n.id}" data-id="${n.id}"><span class="no">${n.no.slice(5)}</span><span class="t">${n.title}</span><span class="m">${n.date}</span></a></li>`).join('');
+$('#pick').innerHTML = N.map(n=>`<option value="${n.id}">${n.no} · ${n.title}</option>`).join('');
+$('#pick').addEventListener('change', e=>{ location.hash = e.target.value; });
+const go = ()=>{ render(location.hash.slice(1)); };
+window.addEventListener('hashchange', ()=>{ go(); window.scrollTo(0,0); });
+go();
+</script>
+
+</body></html>
