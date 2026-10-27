@@ -1,0 +1,176 @@
+<title>narka 인사팀</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: 좁은 에디토리얼 단일 컬럼 — 상단 소개, 아래 메뉴는 카드가 아닌 행(row) 목록 */
+:root{
+  --bg:#FAFAF8; --surface:#FFFFFF; --fg:#202020; --muted:#737373; --faint:#A3A3A0;
+  --line:#E8E8E5; --accent:#3B3F9E; --accent-soft:#EEEFF8; --ok:#10B981;
+  --font-kr:"Pretendard","Pretendard Variable","Noto Sans KR",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --font-en:"Inter","Pretendard","Noto Sans KR",-apple-system,sans-serif;
+  --r-sm:4px; --r-md:8px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141413; --surface:#1C1C1B; --fg:#EDEDEB; --muted:#A3A3A0; --faint:#6B6B68;
+  --line:#2C2C2A; --accent:#9EA3F0; --accent-soft:#23243A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141413; --surface:#1C1C1B; --fg:#EDEDEB; --muted:#A3A3A0; --faint:#6B6B68;
+  --line:#2C2C2A; --accent:#9EA3F0; --accent-soft:#23243A; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-kr);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;letter-spacing:-0.01em}
+.wrap{max-width:880px;margin:0 auto;padding-block:0 64px;
+  padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+a{color:inherit;text-decoration:none}
+
+/* 상단 바 */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:28px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand b{font-family:var(--font-en);font-weight:600;font-size:20px;letter-spacing:-0.03em}
+.brand span{font-size:14px;color:var(--muted)}
+.top time{font-family:var(--font-en);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* 소개 */
+.intro{padding-block:72px 56px;display:grid;gap:20px}
+.eyebrow{font-family:var(--font-en);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font-size:clamp(32px,6vw,44px);line-height:1.25;font-weight:700;letter-spacing:-0.035em;text-wrap:balance}
+.lead{margin:0;color:var(--muted);font-size:16px}
+@media (min-width:760px){.lead{white-space:nowrap}}
+
+/* 메뉴 목록 */
+.menu-head{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid var(--fg)}
+.menu-head h2{margin:0;font-size:15px;font-weight:600}
+.menu-head span{font-size:13px;color:var(--muted)}
+.menu{list-style:none;margin:0;padding:0}
+.row{display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:center;
+  padding:28px 4px;border-bottom:1px solid var(--line);position:relative;
+  transition:background .25s var(--ease),padding .25s var(--ease)}
+a.row:hover{background:var(--surface);padding-left:16px;padding-right:16px}
+a.row:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:var(--r-sm)}
+.row-main{min-width:0;display:grid;gap:6px}
+.row-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.row-title strong{font-size:22px;font-weight:600;letter-spacing:-0.025em}
+.row p{margin:0;color:var(--muted);font-size:15px;max-width:40em}
+.path{font-family:var(--font-en);font-size:12px;color:var(--faint);letter-spacing:0}
+.arrow{width:40px;height:40px;border:1px solid var(--line);border-radius:var(--r-md);display:grid;place-items:center;
+  color:var(--fg);transition:all .25s var(--ease);flex:none}
+a.row:hover .arrow{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateX(2px)}
+:root[data-theme="dark"] a.row:hover .arrow{color:#141413}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) a.row:hover .arrow{color:#141413}}
+.badge{font-size:12px;font-weight:500;padding:2px 8px;border-radius:var(--r-sm);line-height:1.6}
+.badge.live{background:var(--accent-soft);color:var(--accent)}
+.badge.soon{border:1px solid var(--line);color:var(--muted)}
+
+/* 준비 중 영역 */
+.row.planned{grid-template-columns:1fr}
+.planned-list{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.planned-list li{font-size:14px;color:var(--muted);padding:6px 12px;border:1px dashed var(--line);border-radius:var(--r-sm)}
+
+/* 안내 */
+.notes{margin-top:56px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;
+  padding-top:24px;border-top:1px solid var(--line)}
+.notes h3{margin:0 0 6px;font-size:14px;font-weight:600}
+.notes p{margin:0;font-size:14px;color:var(--muted)}
+footer{margin-top:64px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--faint)}
+
+@media (max-width:640px){
+  .intro{padding-block:48px 40px}
+  .row{padding:22px 0}
+  a.row:hover{padding-left:8px;padding-right:8px}
+  .row-title strong{font-size:19px}
+  .notes{grid-template-columns:1fr;gap:20px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#" aria-label="narka 인사팀 홈"><b>narka</b><span>인사팀</span></a>
+    <time id="today"></time>
+  </header>
+
+  <section class="intro">
+    <div class="eyebrow">People Team</div>
+    <h1>나르카에서 일하는 데<br>필요한 안내를 한곳에 모았습니다.</h1>
+    <p class="lead">입사 첫날 확인할 것부터 자리 위치, 인사팀 공지까지. 필요한 메뉴를 눌러 바로 이동하세요.</p>
+  </section>
+
+  <main>
+    <div class="menu-head"><h2>메뉴</h2><span>3개 운영 중</span></div>
+    <ul class="menu">
+      <li>
+        <a class="row" href="https://yuharam00.github.io/narka-hr/onboarding/">
+          <div class="row-main">
+            <div class="row-title"><strong>온보딩</strong><span class="badge live">운영 중</span></div>
+            <p>첫날 일정, 근무 시간과 연차 사용 방법, 사내 시스템, 비용 처리까지 입사 후 꼭 알아야 할 내용입니다.</p>
+            <span class="path">/onboarding</span>
+          </div>
+          <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </li>
+      <li>
+        <a class="row" href="https://yuharam00.github.io/narka-hr/office/">
+          <div class="row-main">
+            <div class="row-title"><strong>사무실 좌석 배치</strong><span class="badge live">운영 중</span></div>
+            <p>팀별 자리와 공용 공간 위치를 확인할 수 있습니다. 책상을 누르면 자리 주인이 표시됩니다.</p>
+            <span class="path">/office</span>
+          </div>
+          <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </li>
+      <li>
+        <a class="row" href="https://yuharam00.github.io/narka-hr/announce/">
+          <div class="row-main">
+            <div class="row-title"><strong>인사팀 공지사항</strong><span class="badge live">운영 중</span></div>
+            <p>제도 변경, 시행 일정, 신청 안내 등 인사팀이 전하는 공지를 최신순으로 확인합니다.</p>
+            <span class="path">/announce</span>
+          </div>
+          <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </li>
+      <li>
+        <div class="row planned" aria-disabled="true">
+          <div class="row-main">
+            <div class="row-title"><strong>추가 예정 메뉴</strong><span class="badge soon">준비 중</span></div>
+            <p>아래 메뉴는 순차적으로 열립니다.</p>
+            <ul class="planned-list">
+              <li>사내 규정·제도 안내</li>
+              <li>복리후생 안내</li>
+              <li>신청서·양식 모음</li>
+              <li>자주 묻는 질문</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <section class="notes">
+      <div>
+        <h3>문의</h3>
+        <p>인사·근태·제도 관련 문의는 인사팀장 유하람에게 슬랙으로 보내 주세요.</p>
+      </div>
+      <div>
+        <h3>보안 안내</h3>
+        <p>이 페이지는 임직원 전용입니다. 링크와 화면을 외부에 공유하지 말아 주세요.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>주식회사 언커먼홈 인사팀</span>
+    <span>최종 수정 2026.10.27</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var d=new Date(), w=['일','월','화','수','목','금','토'];
+  var el=document.getElementById('today');
+  el.textContent=d.getFullYear()+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getDate()).padStart(2,'0')+' ('+w[d.getDay()]+')';
+  el.setAttribute('datetime',d.toISOString().slice(0,10));
+})();
+</script>
