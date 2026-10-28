@@ -191,6 +191,18 @@ h2{display:flex;gap:var(--s-2);font-size:var(--fs-h3);line-height:var(--lh-tight
 .close .k{color:var(--ink-3);font-size:var(--fs-label);letter-spacing:var(--ls-label);font-weight:var(--fw-medium);padding-top:2px}
 .close .v{color:var(--ink-2);display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2)}
 .mail{font-size:var(--fs-caption);color:var(--ink);user-select:all}
+.files{margin-top:var(--s-12);border-top:var(--bw) solid var(--ink);padding-top:var(--s-3)}
+.files-h{font-size:var(--fs-caption);font-weight:var(--fw-semibold);color:var(--ink-2);margin-bottom:var(--s-2)}
+.files-h .num{color:var(--ink-3);font-weight:var(--fw-medium);margin-left:4px}
+.file{display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) var(--s-4);border:var(--bw) solid var(--line);border-radius:var(--r-md);background:var(--surface);color:inherit;text-decoration:none;transition:border-color .15s ease}
+.file:hover{border-color:var(--ink-3)}
+.file:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.file-ic{flex:none;width:44px;height:44px;border-radius:var(--r-sm);display:grid;place-items:center;font-size:10px;font-weight:var(--fw-semibold);letter-spacing:.04em;color:#1D6F42;background:rgba(29,111,66,.1)}
+.file-t{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
+.file-t b{font-weight:var(--fw-medium);overflow-wrap:anywhere}
+.file-t span{font-size:var(--fs-caption);color:var(--ink-3)}
+.file-dl{flex:none;font-size:var(--fs-caption);font-weight:var(--fw-semibold);padding:6px 12px;border-radius:var(--r-md);border:var(--bw) solid var(--line)}
+.file:hover .file-dl{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .sign{margin-top:var(--s-12);text-align:center;display:flex;flex-direction:column;gap:2px}
 .sign .d{color:var(--ink-3);font-size:var(--fs-caption)}
 .sign .c{font-weight:var(--fw-semibold);font-size:18px;margin-top:var(--s-2)}
@@ -288,31 +300,6 @@ h2{display:flex;gap:var(--s-2);font-size:var(--fs-h3);line-height:var(--lh-tight
 const MAIL = 'haram@uncmhm.com';
 const N = [
 {
-  id:'n004', no:'2026-004', date:'2026. 10. 29.(목)', title:'퇴직 절차 안내',
-  lead:'퇴직 희망일 30일 전까지 의사를 알리고, 14일 전까지 사직서를 상신해 주세요.',
-  intro:['인수인계와 자산 반납, 퇴직 정산이 빠짐없이 진행될 수 있도록 퇴직 절차를 정리했습니다.','함께한 시간이 잘 마무리될 수 있도록 아래 내용을 확인해 주세요.'],
-  body:[
-    {h:'1. 주요 일정'},
-    {table:{head:['구분','기한'],rows:[['퇴사 의사 표명','퇴직 희망일 최소 30일 전'],['사직서 상신','퇴직일 최소 14일 전 (플렉스 전자결재)'],['자산 반납·계정 차단','최종 근무일'],['퇴직 정산','퇴직일로부터 14일 이내 지급']]}},
-    {note:'※ 최종 근무일은 실제로 근무하는 마지막 날, 퇴직일은 근로관계가 끝나는 날입니다. 잔여 연차를 사용하는 경우 두 날짜가 다를 수 있습니다.'},
-    {h:'2. 면담 절차'},
-    {steps:[['조직장 면담','소속 조직장과 면담해 퇴직일을 협의합니다.'],['인사팀장 면담','퇴직일과 최종 근무일을 확정하고, 퇴직 절차를 안내받습니다. (필수)'],['대표이사 면담','필요한 경우 진행합니다.']]},
-    {note:'※ 조직장(팀장)이 퇴직하는 경우 인사팀장 면담부터 시작합니다.'},
-    {h:'3. 사직서 상신과 제출 서류'},
-    {dash:['플렉스 워크플로우의 「사직서」 양식으로 상신하며, 아래 서류를 함께 첨부합니다.','결재라인: 소속 조직장 → 인사팀장 → 대표이사 (작성자가 조직장인 경우 인사팀장 → 대표이사)']},
-    {gap:true},
-    {table:{head:['서류','제출 방법','대상'],rows:[['사직서','플렉스 전자결재 「사직서」 양식','전원'],['영업비밀 준수 각서','자필 서명 후 스캔(PDF)해 전자결재 첨부<span class="ex">양식은 사직서 결재문서에서 다운로드</span>','전원'],['업무 인수인계서','전자결재 첨부','전원'],['회사 지급 자산 반납확인서','최종 근무일 인사팀장에게 자산 반납 후 상호 서명','전원'],['IRP 계좌 사본','전자결재 첨부','퇴직금 대상자']]}},
-    {h:'4. 최종 근무일에 해 주세요'},
-    {dash:['노트북·아이맥 등 전산장비와 주변기기(충전기 등), 그 밖에 회사가 지급한 물품을 모두 반납합니다.','업무 자료는 팀 공용 저장소로 옮기고, 인수인계를 마친 뒤 반납합니다.','개인 자료는 미리 백업·정리해 주세요. 장비 초기화는 임의로 하지 않고 인사팀 확인 후 진행합니다.','업무용 메일과 협업 도구 계정은 최종 근무일 퇴근 시점에 차단됩니다.','재직 중 취득한 회사의 업무 자료와 정보는 퇴직 후에도 외부로 가져가거나 사용할 수 없습니다.']},
-    {h:'5. 퇴직 정산과 4대보험'},
-    {dash:['퇴직월 급여(일할 계산), 미사용 연차휴가 수당, 퇴직금은 퇴직일로부터 14일 이내 지급합니다.','잔여 연차 일수와 정산 예상 금액은 최종 근무일 전까지 인사팀이 개별 안내합니다. 이견이 있으면 안내받은 기한 안에 회신해 주세요.','퇴직금은 계속근로기간 1년 이상인 경우 지급하며, 본인 명의 개인형퇴직연금(IRP) 계좌로 지급합니다.','4대보험 자격상실일은 퇴직일 다음 날로 신고합니다. 국민연금과 건강보험료는 그날이 속한 달부터 지역가입자 또는 새 직장 기준으로 부과됩니다.']},
-    {h:'6. 자주 묻는 질문'},
-    {faq:[['30일 전에 알리지 못하면 퇴직할 수 없나요?','퇴직은 가능합니다. 다만 인수인계를 위해 정해지는 대로 최대한 빨리 조직장과 인사팀에 알려 주세요.'],['경력증명서와 원천징수영수증은 언제 받을 수 있나요?','퇴직 후 발급합니다. 필요하면 인사팀에 요청해 주세요.'],['입사 1년이 안 됐는데 IRP 계좌가 필요한가요?','퇴직금 지급 대상이 아니므로 제출하지 않아도 됩니다.']]}
-  ],
-  ask:'퇴직 절차와 퇴직 관련 증빙서류는 인사팀 유하람 팀장에게 문의해 주세요.',
-  att:'회사 지급 자산 반납확인서 양식 1부.'
-},
-{
   id:'n003', no:'2026-003', date:'2026. 10. 29.(목)', title:'시용평가 운영 방식 변경 안내',
   lead:'2026년 9월 1일 이후 입사자부터 시용기간 중 평가를 두 번 진행합니다.',
   intro:['새로 합류한 동료가 회사에 잘 자리 잡을 수 있도록 시용기간 평가 방식을 일부 바꾸었습니다.','평가 일정에 맞춰 팀장님들의 작성과 면담에 협조 부탁드립니다.'],
@@ -352,7 +339,32 @@ const N = [
   ask:'궁금한 점은 인사팀 유하람 팀장에게 편하게 문의해 주세요.'
 },
 {
-  id:'n001', no:'2026-001', date:'2026. 11. 27.(금)', title:'팀 업무추진비 지원 시행 안내',
+  id:'n001', no:'2026-001', date:'2026. 10. 29.(목)', title:'퇴직 절차 안내',
+  lead:'퇴직 희망일 30일 전까지 의사를 알리고, 14일 전까지 사직서를 상신해 주세요.',
+  intro:['인수인계와 자산 반납, 퇴직 정산이 빠짐없이 진행될 수 있도록 퇴직 절차를 정리했습니다.','함께한 시간이 잘 마무리될 수 있도록 아래 내용을 확인해 주세요.'],
+  body:[
+    {h:'1. 주요 일정'},
+    {table:{head:['구분','기한'],rows:[['퇴사 의사 표명','퇴직 희망일 최소 30일 전'],['사직서 상신','퇴직일 최소 14일 전 (플렉스 전자결재)'],['자산 반납·계정 차단','최종 근무일'],['퇴직 정산','퇴직일로부터 14일 이내 지급']]}},
+    {note:'※ 최종 근무일은 실제로 근무하는 마지막 날, 퇴직일은 근로관계가 끝나는 날입니다. 잔여 연차를 사용하는 경우 두 날짜가 다를 수 있습니다.'},
+    {h:'2. 면담 절차'},
+    {steps:[['조직장 면담','소속 조직장과 면담해 퇴직일을 협의합니다.'],['인사팀장 면담','퇴직일과 최종 근무일을 확정하고, 퇴직 절차를 안내받습니다. (필수)'],['대표이사 면담','필요한 경우 진행합니다.']]},
+    {note:'※ 조직장(팀장)이 퇴직하는 경우 인사팀장 면담부터 시작합니다.'},
+    {h:'3. 사직서 상신과 제출 서류'},
+    {dash:['플렉스 워크플로우의 「사직서」 양식으로 상신하며, 아래 서류를 함께 첨부합니다.','결재라인: 소속 조직장 → 인사팀장 → 대표이사 (작성자가 조직장인 경우 인사팀장 → 대표이사)']},
+    {gap:true},
+    {table:{head:['서류','제출 방법','대상'],rows:[['사직서','플렉스 전자결재 「사직서」 양식','전원'],['영업비밀 준수 각서','자필 서명 후 스캔(PDF)해 전자결재 첨부<span class="ex">양식은 사직서 결재문서에서 다운로드</span>','전원'],['업무 인수인계서','전자결재 첨부','전원'],['회사 지급 자산 반납확인서','최종 근무일 인사팀장에게 자산 반납 후 상호 서명','전원'],['IRP 계좌 사본','전자결재 첨부','퇴직금 대상자']]}},
+    {h:'4. 최종 근무일에 해 주세요'},
+    {dash:['노트북·아이맥 등 전산장비와 주변기기(충전기 등), 그 밖에 회사가 지급한 물품을 모두 반납합니다.','업무 자료는 팀 공용 저장소로 옮기고, 인수인계를 마친 뒤 반납합니다.','개인 자료는 미리 백업·정리해 주세요. 장비 초기화는 임의로 하지 않고 인사팀 확인 후 진행합니다.','업무용 메일과 협업 도구 계정은 최종 근무일 퇴근 시점에 차단됩니다.','재직 중 취득한 회사의 업무 자료와 정보는 퇴직 후에도 외부로 가져가거나 사용할 수 없습니다.']},
+    {h:'5. 퇴직 정산과 4대보험'},
+    {dash:['퇴직월 급여(일할 계산), 미사용 연차휴가 수당, 퇴직금은 퇴직일로부터 14일 이내 지급합니다.','잔여 연차 일수와 정산 예상 금액은 최종 근무일 전까지 인사팀이 개별 안내합니다. 이견이 있으면 안내받은 기한 안에 회신해 주세요.','퇴직금은 계속근로기간 1년 이상인 경우 지급하며, 본인 명의 개인형퇴직연금(IRP) 계좌로 지급합니다.','4대보험 자격상실일은 퇴직일 다음 날로 신고합니다. 국민연금과 건강보험료는 그날이 속한 달부터 지역가입자 또는 새 직장 기준으로 부과됩니다.']},
+    {h:'6. 자주 묻는 질문'},
+    {faq:[['30일 전에 알리지 못하면 퇴직할 수 없나요?','퇴직은 가능합니다. 다만 인수인계를 위해 정해지는 대로 최대한 빨리 조직장과 인사팀에 알려 주세요.'],['경력증명서와 원천징수영수증은 언제 받을 수 있나요?','퇴직 후 발급합니다. 필요하면 인사팀에 요청해 주세요.'],['입사 1년이 안 됐는데 IRP 계좌가 필요한가요?','퇴직금 지급 대상이 아니므로 제출하지 않아도 됩니다.']]}
+  ],
+  ask:'퇴직 절차와 퇴직 관련 증빙서류는 인사팀 유하람 팀장에게 문의해 주세요.',
+  att:'회사 지급 자산 반납확인서 양식 1부.'
+},
+{
+  id:'n000', no:'2026-000', date:'2026. 11. 27.(금)', title:'팀 업무추진비 지원 시행 안내',
   lead:'12월부터 팀별로 팀장 포함 구성원 1인당 월 5만원의 ‘팀 업무추진비’를 지원합니다.',
   intro:['팀원끼리 함께 식사하고, 회의하고, 커피 한 잔 나누는 시간을 회사가 지원하고자 마련했습니다.','아래 기준을 확인하시고, 팀장님 혹은 파트장님은 정산 절차를 꼭 숙지해 주시기 바랍니다.'],
   body:[
@@ -369,10 +381,11 @@ const N = [
     {faq:[['다 쓰지 못한 금액은 다음 달로 넘어가나요?','넘어가지 않습니다. 당월 미사용분은 소멸됩니다.'],['1인 조직은 어떻게 하나요?','아마존팀은 해외영업팀, 경영팀은 전략구매팀, 글로벌팀은 MD팀에 편입해 함께 지원하고 정산합니다.'],['공용 법인카드는 어디서 받나요?','COO에게 대여 후, 사용한 당일 반납해 주세요.']]}
   ],
   ask:'궁금한 점은 인사팀 유하람 팀장에게 편하게 문의해 주세요.',
-  att:'법인카드 사용내역서 양식 1부 / 조직도 1부.'
+  att:'법인카드 사용내역서 양식 1부 / 조직도 1부.',
+  files:[{name:'나르카_법인카드_사용내역서_양식.xlsx', href:'files/'+encodeURIComponent('나르카_법인카드_사용내역서_양식.xlsx'), type:'Excel', size:'12KB'}]
 }
 ];
-const CAT = {n004:'절차 안내', n003:'운영 변경', n002:'제도 시행', n001:'제도 시행'};
+const CAT = {n003:'운영 변경', n002:'제도 시행', n001:'절차 안내', n000:'제도 시행'};
 const LOGO = document.querySelector('.brand img').src;
 const $ = s => document.querySelector(s);
 const strip = h => h.replace(/<[^>]+>/g,'');
@@ -409,6 +422,7 @@ function render(id, animate){
     <p class="lead">${n.lead}</p>
     ${n.intro.map(x=>`<p class="intro">${x}</p>`).join('')}
     ${body}
+    ${n.files&&n.files.length?`<div class="files"><div class="files-h">첨부파일 <span class="num">${n.files.length}</span></div>${n.files.map(f=>`<a class="file" href="${f.href}" download="${f.name}"><span class="file-ic" aria-hidden="true">XLSX</span><span class="file-t"><b>${f.name}</b><span>${f.type} · ${f.size}</span></span><span class="file-dl">다운로드</span></a>`).join('')}</div>`:''}
     <div class="close">
       <span class="k">문의</span><span class="v">${n.ask}</span>
       <span class="k">메일</span><span class="v"><span class="mail">${MAIL}</span><button class="btn btn--sm" type="button" data-copy="${MAIL}" data-msg="메일 주소를 복사했습니다">복사</button></span>
