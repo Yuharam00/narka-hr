@@ -38,7 +38,8 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-sans);font-size:16
 .eyebrow{font-size:13px;font-weight:500;color:var(--fg-2);letter-spacing:0.04em;display:flex;gap:8px;align-items:center}
 .eyebrow .dot{width:3px;height:3px;border-radius:50%;background:var(--fg-3)}
 h1{font-size:40px;line-height:1.25;font-weight:700;letter-spacing:-0.03em;margin:12px 0 12px;text-wrap:balance}
-.lead{font-size:17px;color:var(--fg-2);max-width:620px;margin:0}
+.lead{font-size:17px;color:var(--fg-2);max-width:760px;margin:0}
+@media (max-width:760px){.br-pc{display:none}}
 .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:40px;border-top:1px solid var(--fg);border-bottom:1px solid var(--line)}
 .fact{padding:20px 24px 22px 0}
 .fact + .fact{padding-left:24px;border-left:1px solid var(--line)}
@@ -141,7 +142,7 @@ footer{margin-top:80px;padding-top:20px;border-top:1px solid var(--line);display
     <a class="brand" href="../" style="display:inline-flex;gap:10px;align-items:baseline;text-decoration:none">narka<span style="font-size:14px;font-weight:500;color:var(--fg-2)">← 인사팀 홈</span></a>
     <div class="eyebrow"><span>나르카 인사팀</span><span class="dot"></span><span>복리후생</span></div>
     <h1>경조사 지원 안내</h1>
-    <p class="lead">결혼, 출산, 조사 등 경조사가 생기면 회사가 경조휴가와 경조금, 화환을 지원합니다. 해당하는 경조사와 근속기간을 선택하면 받을 수 있는 지원을 바로 확인할 수 있습니다.</p>
+    <p class="lead">결혼, 출산, 조사 등 경조사가 생기면 회사가 경조휴가와 경조금, 화환을 지원합니다.<br class="br-pc"> 해당하는 경조사와 근속기간을 선택하면 받을 수 있는 지원을 바로 확인할 수 있습니다.</p>
     <dl class="facts">
       <div class="fact"><dt>경조휴가</dt><dd class="num">최대 20<small>일</small></dd></div>
       <div class="fact"><dt>경조금</dt><dd class="num">최대 30<small>만원</small></dd></div>
