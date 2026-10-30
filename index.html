@@ -57,7 +57,8 @@ a.row:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-r
 .row-main{min-width:0;display:grid;gap:6px}
 .row-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .row-title strong{font-size:22px;font-weight:600;letter-spacing:-0.025em}
-.row p{margin:0;color:var(--muted);font-size:15px;max-width:40em;text-wrap:balance}
+.row p{margin:0;color:var(--muted);font-size:15px}
+@media (max-width:760px){.br-pc{display:none}}
 .path{font-family:var(--font-en);font-size:12px;color:var(--faint);letter-spacing:0}
 .arrow{width:40px;height:40px;border:1px solid var(--line);border-radius:var(--r-md);display:grid;place-items:center;
   color:var(--fg);transition:all .25s var(--ease);flex:none}
@@ -119,7 +120,7 @@ footer{margin-top:64px;display:flex;justify-content:space-between;flex-wrap:wrap
         <a class="row" href="https://yuharam00.github.io/narka-hr/office/">
           <div class="row-main">
             <div class="row-title"><strong>사무실 좌석 배치</strong><span class="badge live">운영 중</span></div>
-            <p>팀별 자리와 공용 공간 위치를 확인할 수 있습니다. 책상을 누르면 자리 주인이 표시됩니다.</p>
+            <p>팀별 자리와 공용 공간 위치를 확인할 수 있습니다.<br class="br-pc"> 책상을 누르면 자리 주인이 표시됩니다.</p>
             <span class="path">/office</span>
           </div>
           <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -139,7 +140,7 @@ footer{margin-top:64px;display:flex;justify-content:space-between;flex-wrap:wrap
         <a class="row" href="https://yuharam00.github.io/narka-hr/family-events/">
           <div class="row-main">
             <div class="row-title"><strong>경조사 지원 안내</strong><span class="badge live">운영 중</span></div>
-            <p>결혼·출산·조사 시 받을 수 있는 경조휴가, 경조금, 화환 기준과 신청 방법입니다. 근속기간을 선택하면 내 지원 내용이 바로 표시됩니다.</p>
+            <p>결혼·출산·조사 시 받을 수 있는 경조휴가, 경조금, 화환 기준과 신청 방법입니다.<br class="br-pc"> 근속기간을 선택하면 내 지원 내용이 바로 표시됩니다.</p>
             <span class="path">/family-events</span>
           </div>
           <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -149,7 +150,7 @@ footer{margin-top:64px;display:flex;justify-content:space-between;flex-wrap:wrap
         <a class="row" href="https://yuharam00.github.io/narka-hr/employee-discount/">
           <div class="row-main">
             <div class="row-title"><strong>임직원 할인 구매</strong><span class="badge live">운영 중</span></div>
-            <p>나르카 전 제품을 임직원 가격(60% 할인)으로 구매하는 방법입니다. 자사몰 가입부터 권한 신청, 전용 페이지 구매까지 단계별로 안내합니다.</p>
+            <p>나르카 전 제품을 임직원 가격(60% 할인)으로 구매하는 방법입니다.<br class="br-pc"> 자사몰 가입부터 권한 신청, 전용 페이지 구매까지 단계별로 안내합니다.</p>
             <span class="path">/employee-discount</span>
           </div>
           <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
