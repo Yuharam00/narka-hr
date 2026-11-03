@@ -1,4 +1,5 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:8px 0 4px;align-items:start}.shots.wide{grid-template-columns:1fr}.shots.c4{grid-template-columns:repeat(4,minmax(0,1fr))}@media (max-width:860px){.shots.c4{grid-template-columns:repeat(2,minmax(0,1fr))}}.shots figure{margin:0}.shots img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface)}.shots a{display:block}.shots a:hover img{border-color:var(--primary-line)}.shots figcaption{margin-top:8px;font-size:var(--fs-caption);color:var(--ink-2)}
+</style></head><body>
 <title>나르카 인사팀 공지</title>
 <style id="kr-wrap">body{word-break:keep-all;overflow-wrap:anywhere}:where(p,li,dd,td,dt,h2,h3){text-wrap:pretty}</style>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -302,6 +303,36 @@ h2{display:flex;gap:var(--s-2);font-size:var(--fs-h3);line-height:var(--lh-tight
 const MAIL = 'haram@uncmhm.com';
 const N = [
 {
+  id:'n006', no:'2026-006', date:'2026. 11. 4.(수)', title:'연차 등록 방법 변경 안내',
+  lead:'11월 9일(월)부터 연차는 플렉스에만 등록하면 됩니다.',
+  intro:['플렉스와 구글 캘린더에 두 번 등록하던 번거로움을 줄이기 위해, 플렉스에 한 번만 등록하면 캘린더에 자동 반영되도록 바꿉니다.'],
+  body:[
+    {h:'1. 무엇이 바뀌나요'},
+    {table:{head:['구분','기존','변경'],rows:[['등록 방법','플렉스 등록 + 구글 캘린더에 all@uncmhm.com 초대','플렉스에만 등록'],['캘린더 반영','직접 일정 생성','플렉스 연동으로 자동 반영 (연차·반차·시간차)']]}},
+    {h:'2. 처음 한 번만 설정해 주세요'},
+    {steps:[['','PC 웹 플렉스에서 구글 캘린더 연동을 설정합니다. (아래 5. 연동 설정 가이드 참고)'],['','연동 후에는 플렉스에서 연차를 신청하면 내 구글 캘린더에 자동으로 표시됩니다.'],['','<b>11월 6일(금)까지</b> 연동을 마쳐 주세요.']]},
+    {h:'3. 다른 구성원의 연차는 이렇게 확인하세요'},
+    {table:{head:['방법','확인 경로'],rows:[['플렉스','오른쪽 아래 일정 보기 → 일정 목록 편집 → 전체 구성원 선택'],['구글 캘린더','왼쪽 다른 캘린더 +에서 구성원 추가 (공유 설정에 따라 \'바쁨\'으로 보일 수 있음)']]}},
+    {h:'4. 꼭 확인해 주세요'},
+    {dash:['11월 9일(월)부터 all@uncmhm.com 초대 일정은 만들지 않아도 됩니다.','연동 후 같은 연차가 캘린더에 두 개 보이면, 직접 만들었던 일정을 지워 주세요.','연차 수정·취소도 플렉스에서만 하면 캘린더에 반영됩니다. 신청·승인 절차는 기존과 같습니다.','연동하지 않으면 내 연차가 캘린더에 표시되지 않습니다. 기한 안에 꼭 연동해 주세요.']},
+    {h:'5. 연동 설정 가이드'},
+    {p:'<b>A. 플렉스와 구글 캘린더 연동하기 (필수)</b>'},
+    {c4:true, shots:[['files/guide-006/s01.jpg','1 · 플렉스 왼쪽 맨 아래 내 이름 클릭'],['files/guide-006/s02.jpg','2 · 내 설정 선택'],['files/guide-006/s03.jpg','3 · 앱 연결 선택'],['files/guide-006/s04.jpg','4 · Google Calendar 켜기']]},
+    {note:'※ 구글 로그인·권한 허용 창이 뜨면 회사 계정(@uncmhm.com)을 선택하고 \'허용\'을 눌러 주세요. 스위치가 초록색으로 바뀌고 연동 계정에 내 회사 메일이 보이면 완료입니다.'},
+    {gap:true},
+    {p:'<b>B. 다른 구성원 연차 보기 ① 플렉스</b>'},
+    {shots:[['files/guide-006/s05.jpg','1 · 홈 피드 오른쪽 일정 보기 클릭'],['files/guide-006/s06.jpg','2 · 일정 목록 편집하기 → 3 · 전체 구성원 선택']]},
+    {shots:[['files/guide-006/s07.jpg','결과 · 전체 구성원의 휴가 일정이 한 화면에 표시됩니다']], wide:true},
+    {gap:true},
+    {p:'<b>C. 다른 구성원 연차 보기 ② 구글 캘린더 (선택)</b>'},
+    {shots:[['files/guide-006/s08.jpg','1 · 다른 캘린더 + 클릭'],['files/guide-006/s09.jpg','2 · 캘린더 구독 선택']]},
+    {shots:[['files/guide-006/s10.jpg','3 · 확인할 구성원 이름 또는 메일 입력 후 선택'],['files/guide-006/s11.jpg','결과 · 추가한 구성원의 일정이 함께 표시됩니다']], wide:true}
+  ],
+  ask:'설정 방법이나 연동 관련 문의는 인사팀 유하람 팀장에게 해 주세요.',
+  att:'플렉스–구글 캘린더 연동 설정 가이드 1부.',
+  files:[{name:'나르카_플렉스_구글캘린더_연동설정가이드.pdf', href:'files/'+encodeURIComponent('나르카_플렉스_구글캘린더_연동설정가이드.pdf'), type:'PDF', ext:'PDF', size:'616KB'}]
+},
+{
   id:'n005', no:'2026-005', date:'2026. 10. 29.(목)', title:'플렉스 개인 정보 입력 안내',
   lead:'11월 6일(금)까지 플렉스 내 프로필에 주소·급여 계좌·경력·학력 정보를 입력해 주세요.',
   intro:['인사 기록을 정확하게 관리하고 급여 지급과 각종 증명서 발급을 원활하게 처리하기 위해 플렉스에 등록된 구성원 정보를 정비합니다.','바쁘시더라도 기한 안에 입력 부탁드립니다.'],
@@ -421,7 +452,7 @@ const N = [
   files:[{name:'나르카_법인카드_사용내역서_양식.xlsx', href:'files/'+encodeURIComponent('나르카_법인카드_사용내역서_양식.xlsx'), type:'Excel', ext:'XLSX', size:'12KB'}]
 }
 ];
-const CAT = {n005:'정보 입력', n004:'운영 안내', n003:'운영 변경', n002:'제도 시행', n001:'절차 안내', n000:'제도 시행'};
+const CAT = {n006:'운영 변경', n005:'정보 입력', n004:'운영 안내', n003:'운영 변경', n002:'제도 시행', n001:'절차 안내', n000:'제도 시행'};
 const LOGO = document.querySelector('.brand img').src;
 const $ = s => document.querySelector(s);
 const strip = h => h.replace(/<[^>]+>/g,'');
@@ -439,6 +470,7 @@ function block(b, ctx){
   if(b.steps) return `<ol class="steps">${b.steps.map(([k,v],i)=>`<li><span class="n num">${String(i+1).padStart(2,'0')}</span><span>${k?`<strong>${k}</strong>`:''}<span class="v">${v}</span></span></li>`).join('')}</ol>`;
   if(b.dash) return `<ul class="dash">${b.dash.map(x=>`<li>${x}</li>`).join('')}</ul>`;
   if(b.two) return `<div class="two">${b.two.map(([t,xs],i)=>`<div class="${i?'no':'ok'}"><h3>${t}</h3><ul>${xs.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')}</div>`;
+  if(b.shots) return `<div class="shots${b.wide?' wide':''}${b.c4?' c4':''}">${b.shots.map(([src,cap])=>`<figure><a href="${src}" target="_blank" rel="noopener"><img src="${src}" alt="${cap}" loading="lazy"></a><figcaption>${cap}</figcaption></figure>`).join('')}</div>`;
   if(b.faq) return `<dl class="faq">${b.faq.map(([q,a])=>`<div><span class="q">Q</span><dt>${q}</dt><dd>${a}</dd></div>`).join('')}</dl>`;
   return '';
 }
