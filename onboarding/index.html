@@ -760,7 +760,7 @@ const SEAT_SHEET = "https://docs.google.com/spreadsheets/d/1FPpLITOqZxIqOa71sJJU
 const SEAT_PAGE = "https://yuharam00.github.io/narka-hr/office/";
 const AFTER_MOVE = new Date(Date.now() + 9 * 36e5).toISOString().slice(0, 10) >= "2026-11-26";
 function fmt(s){
-  if(AFTER_MOVE) s = String(s).split(SEAT_SHEET).join(SEAT_PAGE);
+  if(AFTER_MOVE) s = String(s).split("[팀 자리배치도 및 연락처](" + SEAT_SHEET + ")").join("[팀 자리배치도](" + SEAT_PAGE + ")").split(SEAT_SHEET).join(SEAT_PAGE);
   let h = esc(s);
   h = h.replace(/\{!([^}]*)\}/g, (_, t) => `<span class="flag">${t || "확인 필요"}</span>`);
   h = h.replace(/\[([^\]]+)\]\((#[\w-]+)\)/g, (_, t, u) => `<a class="int" href="${u}" data-nav="${u.slice(1)}">${t}</a>`);
