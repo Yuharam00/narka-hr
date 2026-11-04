@@ -583,10 +583,8 @@ const PAGES = [
     {t:"table", head:["구분","내용"], rows:[
       ["연차","입사일 기준 발생 · FLEX에서 신청\n입사 1년 미만: 1개월 개근 시 1일 (최대 11일)\n1년 이상 (80% 이상 출근): 15일, 3년 이상 근속 시 2년마다 1일 가산 (최대 25일)\n근거: 근로기준법 제60조"],
       ["반차","오전·오후 반차 모두 출근 시각부터 실근무 4시간(점심시간 제외)을 채워야 합니다."],
-      ["여름 유급휴가","최대 5일, 법정 연차휴가와 별도 부여 (적용 시점은 개별 입사 조건에 따름) {!확인 필요: 사용 기간}"],
-      ["병가","개인 연차에서 사용"],
-      ["경조휴가","{!확인 필요}"],
-      ["재택근무","기준 정비 중 · 필요 시 팀장과 인사팀에 사전 협의"]
+      ["병가","무급"],
+      ["경조휴가","[경조사 지원 안내 페이지](https://yuharam00.github.io/narka-hr/family-events/)에서 확인해 주세요."]
     ]},
     {t:"h3", text:"휴가 신청 절차"},
     {t:"ol", items:[
@@ -767,7 +765,7 @@ function fmt(s){
   let h = esc(s);
   h = h.replace(/\{!([^}]*)\}/g, (_, t) => `<span class="flag">${t || "확인 필요"}</span>`);
   h = h.replace(/\[([^\]]+)\]\((#[\w-]+)\)/g, (_, t, u) => `<a class="int" href="${u}" data-nav="${u.slice(1)}">${t}</a>`);
-  h = h.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, (_, t, u) => `<a class="ext" href="${u}" target="_blank" rel="noopener noreferrer">${t}</a>`);
+  h = h.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, (_, t, u) => u.includes("yuharam00.github.io/narka-hr/") ? `<a class="int" href="${u}">${t}</a>` : `<a class="ext" href="${u}" target="_blank" rel="noopener noreferrer">${t}</a>`);
   h = h.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   h = h.replace(/`([^`]+)`/g, "<code>$1</code>");
   return h.replace(/\n/g, "<br>");
