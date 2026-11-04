@@ -625,7 +625,7 @@ const PAGES = [
 },
 {
   id:"benefits", group:"policy", title:"복리후생", glyph:"B",
-  desc:"성장·휴가·생활 지원, 직원 전용 구매, 야근 지원", updated:"2026.10.21", owner:"인사팀",
+  desc:"성장·휴가·근속·생활·보상 분야별 제도와 야근 지원 — 인사팀 복리후생 페이지에서 안내", updated:"2026.10.21", owner:"인사팀",
   notion:"3ff9a9cf104b814384abcad694698734", related:["work","family","guide"],
   blocks:[
     {t:"callout", tone:"info", icon:"+", text:"일을 더 잘하기 위해 필요한 복지가 있다면 언제든 인사팀에 제안해 주세요."},
@@ -750,6 +750,7 @@ const listTotal = ids => ids.reduce((n, id) => n + (checkLists[id] ? checkLists[
 const pageLists = pid => ALL_LISTS.filter(id => checkLists[id].page === pid);
 const flagCount = p => JSON.stringify(p.blocks).split("{!").length - 1;
 function statusBadge(p){
+  if(p.id === "benefits") return `<span class="badge badge--primary">복리후생 페이지로 이동 →</span>`;
   const lists = pageLists(p.id);
   if(lists.length) return `<span class="badge">체크리스트 ${listTotal(lists)}개</span>`;
   if(p.review) return `<span class="badge badge--error">노무 검토 후 게시</span>`;
@@ -910,6 +911,7 @@ function docView(p){
 let current = "home";
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 function go(id, anchor){
+  if(id === "benefits"){ location.href = "../benefits/"; return; }
   if(!byId[id] && id !== "home") id = "home";
   current = id;
   closeOv("menu");

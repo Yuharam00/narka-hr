@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>나르카 복리후생</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: 단일 컬럼 에디토리얼 — 요약 → 분야별 제도(분야명 왼쪽, 항목 오른쪽) → 야근 지원 → 함께 보기 → 유의사항 */
+:root{
+  --bg:#FAFAF8; --surface:#FFFFFF; --text:#202020; --text-2:#737373; --text-3:#A3A3A0;
+  --border:#E8E8E5; --line:#F0F0EC; --primary:#3D4AC4; --primary-soft:#EEF0FB;
+  --warning:#B7791F; --warning-soft:#FDF5E6;
+  --font-kr:"Pretendard","Pretendard Variable","Noto Sans KR",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --font-en:"Inter","Pretendard","Noto Sans KR",-apple-system,sans-serif;
+  --r-sm:4px; --r-md:8px; --r-lg:12px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141414; --surface:#1C1C1B; --text:#EDEDEA; --text-2:#A3A3A0; --text-3:#6E6E6B;
+  --border:#2E2E2C; --line:#262624; --primary:#8C96F0; --primary-soft:#22243A;
+  --warning:#F2B54A; --warning-soft:#2C2416; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141414; --surface:#1C1C1B; --text:#EDEDEA; --text-2:#A3A3A0; --text-3:#6E6E6B;
+  --border:#2E2E2C; --line:#262624; --primary:#8C96F0; --primary-soft:#22243A;
+  --warning:#F2B54A; --warning-soft:#2C2416; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-kr);font-size:16px;line-height:1.65;
+  letter-spacing:-0.01em;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:anywhere;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto;padding-block:48px 80px;display:flex;flex-direction:column;gap:64px}
+.num{font-family:var(--font-en);font-variant-numeric:tabular-nums}
+a{color:var(--primary);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:var(--r-sm)}
+
+/* header */
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.brand{font-family:var(--font-en);font-weight:600;font-size:17px;letter-spacing:-0.02em;color:var(--text);text-decoration:none}
+.brand span{color:var(--text-2);font-weight:400;margin-left:6px;font-size:14px;font-family:var(--font-kr)}
+.tag{font-size:13px;color:var(--text-2)}
+
+/* hero */
+.eyebrow{font-size:13px;color:var(--text-2);letter-spacing:.04em;margin:0 0 12px}
+h1{font-size:40px;line-height:1.25;font-weight:700;letter-spacing:-0.03em;margin:0 0 16px;text-wrap:balance}
+.lead{color:var(--text-2);margin:0}
+.facts{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:32px}
+.fact{padding:18px 16px 18px 0;display:flex;flex-direction:column;gap:2px;min-width:0;text-decoration:none;color:inherit;transition:background .18s var(--ease)}
+.fact+.fact{padding-left:16px;border-left:1px solid var(--border)}
+.fact:hover dt{color:var(--primary)}
+.fact dt{font-size:13px;color:var(--text-2);transition:color .18s var(--ease)}
+.fact dd{margin:0;font-size:22px;font-weight:600;letter-spacing:-0.02em}
+.fact dd small{font-size:14px;color:var(--text-2);font-weight:400;margin-left:2px}
+
+/* section */
+h2{font-size:24px;font-weight:600;letter-spacing:-0.02em;margin:0 0 6px}
+.sub{color:var(--text-2);font-size:15px;margin:0 0 28px}
+section{scroll-margin-top:24px}
+
+/* category blocks */
+.cats{border-top:1px solid var(--text)}
+.cat{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--border);scroll-margin-top:24px}
+.cat-name{display:flex;flex-direction:column;gap:2px}
+.cat-name b{font-size:18px;font-weight:600;letter-spacing:-0.02em}
+.cat-name span{font-size:13px;color:var(--text-2)}
+.items{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.item{display:grid;grid-template-columns:1fr minmax(0,220px);gap:6px 24px;padding:12px 0;border-top:1px solid var(--line)}
+.item:first-child{border-top:none;padding-top:0}
+.item:last-child{padding-bottom:0}
+.item b{font-weight:600;font-size:16px;line-height:1.55}
+.item .how{font-size:14px;color:var(--text-2);line-height:1.55}
+.item .how a{font-weight:500}
+.flag{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;font-size:12px;font-weight:500;background:var(--warning-soft);color:var(--warning);white-space:nowrap}
+
+/* table */
+.tbl{overflow-x:auto;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.6}
+th,td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{font-size:13px;font-weight:500;color:var(--text-2);background:var(--bg);white-space:nowrap}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
+tbody th{font-weight:600;white-space:nowrap}
+td{min-width:150px}
+
+/* related links */
+.links{list-style:none;margin:0;padding:0;border-top:1px solid var(--border)}
+.link{display:grid;grid-template-columns:1fr auto;gap:4px 20px;align-items:center;padding:20px 4px;border-bottom:1px solid var(--border);
+  text-decoration:none;color:var(--text);transition:background .25s var(--ease),padding .25s var(--ease)}
+.link:hover{background:var(--surface);padding-left:14px;padding-right:14px}
+.link b{font-size:18px;font-weight:600;letter-spacing:-0.02em}
+.link p{margin:2px 0 0;font-size:14px;color:var(--text-2)}
+.arrow{width:36px;height:36px;border:1px solid var(--border);border-radius:var(--r-md);display:grid;place-items:center;color:var(--text);transition:all .25s var(--ease)}
+.link:hover .arrow{background:var(--primary);border-color:var(--primary);color:#fff}
+:root[data-theme="dark"] .link:hover .arrow{color:#141414}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .link:hover .arrow{color:#141414}}
+
+/* notes */
+.note-box{padding:18px 20px;border-radius:var(--r-lg);background:var(--primary-soft);color:var(--text);font-size:15px}
+.notice{font-size:14px;color:var(--text-2);margin:16px 0 0}
+
+/* contact */
+.contact{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:24px 0;border-top:1px solid var(--border)}
+.contact .who{display:flex;flex-direction:column;gap:2px}
+.contact .who span{font-size:13px;color:var(--text-2)}
+.contact .who b{font-size:17px;font-weight:600}
+footer{font-size:12px;color:var(--text-3);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:640px){
+  .wrap{padding-block:32px 56px;gap:48px}
+  h1{font-size:30px}
+  .facts{grid-template-columns:repeat(3,1fr)}
+  .fact,.fact+.fact{padding:14px 12px 14px 0;border-left:none}
+  .fact:nth-child(n+4){border-top:1px solid var(--line)}
+  .cat{grid-template-columns:1fr;gap:12px}
+  .cat-name{flex-direction:row;align-items:baseline;gap:8px}
+  .item{grid-template-columns:1fr;gap:2px}
+  .link:hover{padding-left:8px;padding-right:8px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="../">narka<span>← 인사팀 홈</span></a>
+    <div class="tag">복리후생</div>
+  </header>
+
+  <section aria-labelledby="t">
+    <p class="eyebrow">전 구성원 대상</p>
+    <h1 id="t">나르카 복리후생 제도</h1>
+    <p class="lead">나르카에서 받을 수 있는 복리후생을 분야별로 정리했습니다.<br>일을 더 잘하기 위해 필요한 복지가 있다면 언제든 인사팀에 제안해 주세요.</p>
+    <dl class="facts">
+      <a class="fact" href="#growth"><dt>성장</dt><dd class="num">2<small>가지</small></dd></a>
+      <a class="fact" href="#leave"><dt>휴가</dt><dd class="num">1<small>가지</small></dd></a>
+      <a class="fact" href="#tenure"><dt>근속</dt><dd class="num">1<small>가지</small></dd></a>
+      <a class="fact" href="#life"><dt>생활</dt><dd class="num">7<small>가지</small></dd></a>
+      <a class="fact" href="#reward"><dt>보상</dt><dd class="num">1<small>가지</small></dd></a>
+    </dl>
+  </section>
+
+  <section aria-labelledby="s1">
+    <h2 id="s1">분야별 제도</h2>
+    <p class="sub">이용 방법이 '확인 필요'인 항목은 세부 기준을 정비하고 있습니다. 확정되면 이 페이지에 안내합니다.</p>
+    <div class="cats">
+      <div class="cat" id="growth">
+        <div class="cat-name"><b>성장</b><span>2가지</span></div>
+        <ul class="items">
+          <li class="item"><b>업무 관련 교육비, 세미나·컨퍼런스 참석 지원</b><span class="how"><span class="flag">확인 필요</span></span></li>
+          <li class="item"><b>도서 구매비 지원</b><span class="how"><span class="flag">확인 필요</span></span></li>
+        </ul>
+      </div>
+      <div class="cat" id="leave">
+        <div class="cat-name"><b>휴가</b><span>1가지</span></div>
+        <ul class="items">
+          <li class="item"><b>유급 여름휴가 최대 5일 (법정 연차휴가와 별도)</b><span class="how">FLEX 신청</span></li>
+        </ul>
+      </div>
+      <div class="cat" id="tenure">
+        <div class="cat-name"><b>근속</b><span>1가지</span></div>
+        <ul class="items">
+          <li class="item"><b>2년 근속 시 해외여행 및 건강검진 지원</b><span class="how"><span class="flag">확인 필요</span></span></li>
+        </ul>
+      </div>
+      <div class="cat" id="life">
+        <div class="cat-name"><b>생활</b><span>7가지</span></div>
+        <ul class="items">
+          <li class="item"><b>자사 제품 임직원 할인 60%</b><span class="how"><a href="../employee-discount/">임직원 할인 구매 안내</a> 참고</span></li>
+          <li class="item"><b>매주 월요일 조식 (샌드위치)</b><span class="how">전 직원 대상</span></li>
+          <li class="item"><b>야근 석식 1인 13,000원 한도</b><span class="how">아래 <a href="#overtime">야근 지원</a> 참고</span></li>
+          <li class="item"><b>야근 택시비</b><span class="how">아래 <a href="#overtime">야근 지원</a> 참고</span></li>
+          <li class="item"><b>웰컴 패키지</b><span class="how"><span class="flag">확인 필요: 지급 시점</span></span></li>
+          <li class="item"><b>명절 상품권</b><span class="how">설 · 추석</span></li>
+          <li class="item"><b>커피 · 간식</b><span class="how">사내 공용 비치, 자유롭게 이용</span></li>
+        </ul>
+      </div>
+      <div class="cat" id="reward">
+        <div class="cat-name"><b>보상</b><span>1가지</span></div>
+        <ul class="items">
+          <li class="item"><b>마일스톤 인센티브: 전 구성원 대상, 국내·해외 매출, 온드미디어 팔로워 수 등 회사 마일스톤 달성 시 지급</b><span class="how">세부 기준·시기는 회사 인센티브 운영 기준에 따름</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="overtime" aria-labelledby="s2">
+    <h2 id="s2">야근 지원</h2>
+    <p class="sub">근무시간 외 식대·교통비는 아래 기준에 맞는 경우에만 지원합니다.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>항목</th><th>지원 대상</th><th>기준</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">석식</th><td>20:30 이후까지 근무하는 경우</td><td>1인 13,000원 한도, 법인카드 결제<br>여러 명이 함께 주문할 때는 배달비 절감을 위해 한 식당에서 주문<br>일찍 출근했더라도 18~19시 석식은 지원하지 않습니다</td></tr>
+        <tr><th scope="row">택시비</th><td>22:30 이후까지 근무하는 경우</td><td>리더 또는 COO 사전 승인 필수 · 가급적 22:30 이전 퇴근 권장</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="s3">
+    <h2 id="s3">함께 보기</h2>
+    <p class="sub">신청 방법이 따로 정리된 제도입니다.</p>
+    <ul class="links">
+      <li><a class="link" href="../employee-discount/"><div><b>임직원 할인 구매</b><p>자사몰 가입부터 권한 신청, 임직원 전용 페이지 구매까지 단계별 안내</p></div><span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+      <li><a class="link" href="../family-events/"><div><b>경조사 지원 안내</b><p>결혼·출산·조사 시 경조휴가, 경조금, 화환 기준과 신청 방법</p></div><span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+      <li><a class="link" href="../onboarding/#family"><div><b>모성보호 · 육아지원 제도</b><p>임신·출산·육아 관련 법정 제도와 신청 방법 (온보딩)</p></div><span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+    </ul>
+  </section>
+
+  <section aria-label="안내">
+    <div class="note-box">이 페이지에는 확정된 제도만 게시합니다. 복리후생과 비용 지원 기준은 현재 정비 중이며, 변경 시 공지합니다.</div>
+    <p class="notice">모든 비용은 사전 승인이 원칙입니다. 근무시간 외 저녁 식대, 야근 교통비, 규정되지 않은 비용 모두 사전 승인 후 사용해 주세요.</p>
+  </section>
+
+  <div class="contact">
+    <div class="who"><span>제도 문의</span><b>인사팀장 유하람(슬랙)</b></div>
+    <div class="who"><span>임직원 할인 구매 문의</span><b>MD팀</b></div>
+  </div>
+
+  <footer><span>주식회사 언커먼홈 · 나르카 인사팀</span><span>최종 수정 2026.11.04</span></footer>
+</div>
+</body></html>
