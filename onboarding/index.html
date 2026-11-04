@@ -268,6 +268,12 @@ td{min-width:140px;color:var(--text)}
 .years li:last-child{background:var(--primary-soft)}
 blockquote.vision-q{margin:14px 0 24px;padding:28px 32px;border-radius:var(--r-12);background:var(--primary-soft);font-size:clamp(20px,2.4vw,26px);line-height:1.55;letter-spacing:-.025em;font-weight:600;text-wrap:balance}
 
+.org{margin:14px 0 22px}
+.org a{display:block;border:1px solid var(--border);border-radius:var(--r-12);background:#fff;overflow:hidden;transition:border-color .15s}
+.org a:hover{border-color:var(--border-2)}
+.org-scroll{overflow-x:auto;padding:16px}
+.org img{display:block;width:100%;min-width:720px;height:auto}
+.org figcaption{margin-top:8px;font-size:13.5px;color:var(--text-2)}
 .figure{margin:14px 0 22px;padding:28px;border-radius:var(--r-12);background:var(--surface-2);border:1px dashed var(--border-2);text-align:center;color:var(--text-2);font-size:15px}
 .figure b{display:block;color:var(--text);font-size:17px;margin-bottom:4px}
 
@@ -532,11 +538,11 @@ const PAGES = [
 },
 {
   id:"people", group:"company", title:"조직과 담당자", glyph:"P",
-  desc:"조직도와 상황별 문의처", updated:"2026.10.21", updatedNote:"2026년 10월 기준 · 조직 변경 시 인사팀이 갱신합니다", owner:"인사팀",
+  desc:"조직도와 상황별 문의처", updated:"2026.11.04", updatedNote:"2026년 11월 기준 · 조직 변경 시 인사팀이 갱신합니다", owner:"인사팀",
   notion:"3ff9a9cf104b8154b776e5772e337eab", related:["first-day","guide","work"],
   blocks:[
     {t:"h2", id:"org", text:"조직도"},
-    {t:"figure", title:"조직도 이미지", text:"조직도 이미지는 준비 중입니다. 필요하시면 인사팀에 요청해 주세요.", link:"3ff9a9cf104b8154b776e5772e337eab"},
+    {t:"image", src:"org-chart.png", alt:"(주)언커먼홈 조직도", caption:"2026년 11월 4일 기준 · 이미지를 누르면 크게 볼 수 있습니다."},
     {t:"h2", id:"whom", text:"이럴 땐 누구에게"},
     {t:"table", head:["상황","문의처"], rows:[
       ["근태·휴가·급여·증명서 발급","인사팀"],
@@ -783,6 +789,7 @@ function renderBlock(b, p, ctx){
     case "timeline":
       if(p.id === "about") return `<ol class="years">${b.rows.map(r => `<li><span class="y">${esc(r[0])}</span><span>${fmt(r[1])}</span></li>`).join("")}</ol>`;
       return `<ol class="sched">${b.rows.map(r => `<li><span class="t">${esc(r[0])}</span><span>${fmt(r[1])}</span><span class="who">${r[2] ? `<span class="badge">${esc(r[2])}</span>` : ""}</span></li>`).join("")}</ol>`;
+    case "image": return `<figure class="org"><a href="${esc(b.src)}" target="_blank" rel="noopener"><div class="org-scroll"><img src="${esc(b.src)}" alt="${esc(b.alt)}" loading="lazy"></div></a>${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ""}</figure>`;
     case "figure": return `<div class="figure"><b>${esc(b.title)}</b>${esc(b.text)}</div>`;
     case "tools":
       if(ctx.toolsDone) return ""; ctx.toolsDone = true;
