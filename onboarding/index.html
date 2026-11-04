@@ -299,6 +299,10 @@ blockquote.vision-q{margin:14px 0 24px;padding:28px 32px;border-radius:var(--r-1
 .ci .tx{font-size:15px;transition:color .2s}
 .ci.done .tx{color:var(--text-3);text-decoration:line-through;text-decoration-color:var(--border-2)}
 .only-open .ci.done{display:none}
+.cl{list-style:none;margin:0;padding:2px 14px 10px}
+.cl li{position:relative;padding:9px 0 9px 18px;margin:0;font-size:15px;border-top:1px solid var(--border)}
+.cl li:first-child{border-top:0}
+.cl li::before{content:"";position:absolute;left:2px;top:19px;width:5px;height:5px;border-radius:50%;background:var(--primary)}
 .reset{background:none;border:0;padding:0;cursor:pointer;color:var(--text-2);font-size:13.5px;text-decoration:underline;text-underline-offset:3px}
 
 /* benefits */
@@ -792,13 +796,9 @@ function renderBlock(b, p, ctx){
       return `<ol class="sched">${b.rows.map(r => `<li><span class="t">${esc(r[0])}</span><span>${fmt(r[1])}</span><span class="who">${r[2] ? `<span class="badge">${esc(r[2])}</span>` : ""}</span></li>`).join("")}</ol>`;
     case "image": return `<figure class="org"><a href="${esc(b.src)}" target="_blank" rel="noopener"><div class="org-scroll"><img src="${esc(b.src)}" alt="${esc(b.alt)}" loading="lazy"></div></a>${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ""}</figure>`;
     case "figure": return `<div class="figure"><b>${esc(b.title)}</b>${esc(b.text)}</div>`;
-    case "tools":
-      if(ctx.toolsDone) return ""; ctx.toolsDone = true;
-      return `<div class="j-tools"><button class="tgl" data-act="only-open" aria-pressed="${state.onlyOpen}"><span class="sw"></span>체크하지 않은 항목만 보기</button><span>스스로 확인하는 용도이며, 체크 표시는 이 브라우저에만 남습니다.</span></div>`;
+    case "tools": return "";
     case "check":
-      return `<div class="stops ${state.onlyOpen ? "only-open" : ""}"><div class="jstop" data-list="${b.id}"><h4>${esc(b.title)}<span>${b.items.length}개</span></h4>
-        ${b.items.map((it, i) => { const k = b.id + ":" + i, on = !!state.checks[k];
-          return `<label class="ci ${on ? "done" : ""}" for="c-${k}"><input type="checkbox" id="c-${k}" data-key="${k}" ${on ? "checked" : ""}><span class="bx">${CHECK_SVG}</span><span class="tx">${fmt(it)}</span></label>`; }).join("")}</div></div>`;
+      return `<div class="stops"><div class="jstop"><h4>${esc(b.title)}<span>${b.items.length}개</span></h4><ul class="cl">${b.items.map(it => `<li>${fmt(it)}</li>`).join("")}</ul></div></div>`;
   }
   return "";
 }
@@ -896,7 +896,6 @@ function docView(p){
         ${heads.length > 1 ? `<nav class="toc" aria-label="이 문서 목차">${heads.map(h => `<a href="#${p.id}" data-nav="${p.id}" data-anchor="${h.id}">${esc(h.text)}</a>`).join("")}</nav>` : ""}
       </header>
       <article class="paper"><div class="content">${body}
-        ${pageLists(p.id).length ? `<p style="margin:16px 0 0"><button class="reset" data-act="reset" data-page="${p.id}">이 문서의 체크 지우기</button></p>` : ""}
       </div></article>
       <div class="after">
         <div class="rel"><span>관련 문서</span>${p.related.map(id => `<a class="badge" href="#${id}" data-nav="${id}">${esc(byId[id].title)}</a>`).join("")}</div>
