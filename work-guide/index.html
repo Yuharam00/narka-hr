@@ -104,6 +104,17 @@ ul.plain li{margin-bottom:6px}
 ul.plain li::marker{color:var(--fg-3)}
 strong{font-weight:600}
 
+.free{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:center;border:1px solid var(--accent);background:var(--accent-soft);border-radius:var(--r-md);padding:24px 28px;margin:0 0 24px}
+.free .k{font-size:13px;font-weight:500;color:var(--accent);letter-spacing:.02em}
+.free .big{font-size:clamp(24px,3.6vw,30px);font-weight:600;letter-spacing:-.02em;line-height:1.3;margin:6px 0 8px}
+.free .big .num{white-space:nowrap}
+.free p{margin:0;color:var(--fg);font-size:15px}
+.free ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:15px}
+.free li{display:flex;gap:10px;align-items:baseline}
+.free li::before{content:"";flex:0 0 6px;height:6px;border-radius:50%;background:var(--accent);transform:translateY(-2px)}
+.free .ex{font-family:var(--num);font-variant-numeric:tabular-nums;font-weight:600}
+@media (max-width:640px){.free{grid-template-columns:minmax(0,1fr);padding:20px}}
+
 /* timeline */
 .tl{border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);padding:24px}
 .tl-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px}
@@ -212,7 +223,7 @@ footer b{color:var(--fg);font-weight:500}
       <span>담당 <b>인사팀</b></span>
     </div>
     <dl class="facts">
-      <div class="fact"><dt>출근</dt><dd><span class="num">08:00 – 11:00</span><small>이 사이에 자유롭게 출근</small></dd></div>
+      <div class="fact"><dt>출근</dt><dd><span class="num">08:00 – 11:00</span><small>1분 단위로 자유롭게 출근</small></dd></div>
       <div class="fact"><dt>퇴근</dt><dd>출근 + 9시간<small>점심 1시간 20분 포함</small></dd></div>
       <div class="fact"><dt>야근·휴일근무</dt><dd>사전승인 필수<small>Flex에서 시작 전에 신청</small></dd></div>
       <div class="fact"><dt>수당 지급</dt><dd>다음 달 25일<small>다음 달 10일까지 신청서 상신</small></dd></div>
@@ -254,16 +265,29 @@ footer b{color:var(--fg);font-weight:500}
       <div class="sec-no">01</div>
       <h2>근무시간</h2>
       <p class="sub">08:00부터 11:00 사이에 원하는 시각에 출근하고, 출근 후 9시간이 지나면 퇴근합니다. 9시간 안에는 점심 1시간 20분이 들어 있습니다.</p>
+      <div class="free" role="note" aria-label="출근시각 안내">
+        <div>
+          <div class="k">달라진 점</div>
+          <div class="big"><span class="num">08:00 – 11:00</span> 사이,<br>1분 단위로 자유롭게 출근</div>
+          <p>정해진 출근 시각 중에서 고르지 않아도 됩니다. 별도 신청이나 승인 없이 출근하고, 퇴근은 출근 후 9시간입니다.</p>
+        </div>
+        <ul>
+          <li><span>예: <span class="ex">08:23</span> 출근 → <span class="ex">17:23</span> 퇴근</span></li>
+          <li><span>예: <span class="ex">09:47</span> 출근 → <span class="ex">18:47</span> 퇴근</span></li>
+          <li><span>예: <span class="ex">10:58</span> 출근 → <span class="ex">19:58</span> 퇴근</span></li>
+          <li><span>날마다 출근시각이 달라도 괜찮습니다.</span></li>
+        </ul>
+      </div>
 
       <div class="tl" aria-label="출근시각별 하루 일정">
         <div class="tl-top">
           <div class="tl-pick">
-            <label for="startRange">출근시각을 골라 보세요</label>
+            <label for="startRange">출근시각을 움직여 보세요 (1분 단위)</label>
             <output id="startOut" for="startRange">10:00</output>
           </div>
           <div class="tl-out">퇴근시각<b id="endOut">19:00</b></div>
         </div>
-        <input type="range" id="startRange" min="480" max="660" step="10" value="600" aria-label="출근시각">
+        <input type="range" id="startRange" min="480" max="660" step="1" value="600" aria-label="출근시각">
         <div class="bar-scroll">
           <div class="bar" id="bar">
             <div class="seg ot" id="segOt"></div>
@@ -294,7 +318,7 @@ footer b{color:var(--fg);font-weight:500}
       <p>회사가 드리는 20분은 근로시간으로 인정되는 <strong>유급휴식</strong>입니다. 그래서 하루 근로시간은 <strong>8시간</strong>(유급휴식 20분 포함), 회사에 머무는 시간은 9시간이 됩니다. 이 20분 때문에 급여가 줄어들지 않습니다.</p>
       <ul class="plain">
         <li>근무일은 월요일부터 금요일까지입니다.</li>
-        <li>회의나 외부 일정이 있으면 조직장이 <strong>전날까지</strong> 출근시각을 지정할 수 있습니다(08:00–11:00 범위 안에서).</li>
+        <li>단, 회의나 외부 일정이 있으면 조직장이 <strong>전날까지</strong> 출근시각을 지정할 수 있습니다(08:00–11:00 범위 안에서).</li>
         <li>회의 등 함께 하는 일은 <strong>협업시간(11:00–17:00)</strong>에 잡는 것이 원칙입니다.</li>
         <li>점심은 점심시간에 쓰는 것이 원칙이고, 업무상 필요하면 조직장과 협의해 시간대를 바꿀 수 있습니다.</li>
         <li>휴게시간 중에 일을 했다면 그 시간은 근로시간입니다. Flex에서 기록을 정정해 주세요.</li>
