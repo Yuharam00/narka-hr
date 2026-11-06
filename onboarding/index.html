@@ -443,7 +443,7 @@ const PAGES = [
   blocks:[
     {t:"h2", id:"arrive", text:"첫 출근 안내"},
     {t:"kv", rows:[
-      ["출근 시간","첫날 09:30 (이후 출근 시각은 [근무 규정](#work) 참고)"],
+      ["출근 시간","첫날 10:00 (월~금 동일 · 이후 출근 시각은 [근무 규정](#work) 참고)"],
       ["근무 장소","서울 종로구 필운대로 43, 301호 (태평타운) 나르카 사무실\n※ 2026년 11월 26일(목)부터 신규 사무실: 서울시 마포구 잔다리로 39, 201호 (로뎀빌딩)"],
       ["업무 장비","업무용 Windows 노트북, 마우스, 모니터 지급 (Mac 등 다른 환경은 입사 전 인사팀에 요청)"],
       ["업무 메일","회사 메일 초대장을 개인 메일로 발송합니다. 첫날 확인 후 가입해 주세요."],
@@ -452,10 +452,10 @@ const PAGES = [
     {t:"callout", tone:"soft", icon:"i", text:"제출 서류는 입사 제안서(오퍼레터) 안내에 따라 FLEX 초대를 받은 뒤 FLEX에 직접 등록합니다.\n아직 등록하지 못한 서류가 있으면 첫날 인사팀에 알려 주세요."},
     {t:"h2", id:"day1", text:"첫날 일정"},
     {t:"timeline", rows:[
-      ["출근 직후","인사 오리엔테이션: 회사 소개, 근로계약서·비밀유지계약서 작성, 근무 규정·복리후생 안내","인사팀장"],
+      ["10:00~11:00","인사팀장 온보딩 교육: 회사 소개, 근로계약서·비밀유지계약서 작성, 근무 규정·복리후생 안내","인사팀장"],
       ["오전","자리 배정, 노트북·모니터 수령, 업무 계정 세팅","안도영 이사"],
       ["11:00~12:00","브랜드 교육","대표이사"],
-      ["13:00~14:20","웰컴런치","대표이사"],
+      ["13:00~14:00","웰컴런치 (팀 런치)","소속 팀"],
       ["14:30","팀장 첫 면담: 역할, 첫 달 기대 사항, 팀 업무 소개","팀장"],
       ["15:00","사무실 둘러보기, 업무 도구 익히기","소속 팀"],
       ["16:00","첫날 마무리: 불편했던 점·궁금한 점 공유 (5분)","인사팀장"],
@@ -566,17 +566,17 @@ const PAGES = [
   desc:"근무 시간·휴가·연장근무는 나르카 근무 가이드에서 안내 · 시용 기간, 급여, 정보보안", updated:"2026.11.05", owner:"인사팀",
   notion:"3ff9a9cf104b81bea6e3fae7e63b4871", related:["benefits","first-month","guide"],
   blocks:[
-    {t:"callout", tone:"info", icon:"→", text:"근무 시간, 출퇴근 기록, 지각·결근, 휴일·휴가, 외근·출장, 연장근무와 수당은 **[나르카 근무 가이드](https://yuharam00.github.io/narka-hr/work-guide/)**에서 확인해 주세요.\n2026년 11월 26일 시행 근태관리지침과 연장·야간·휴일근로 수당운영지침 기준으로 정리되어 있습니다."},
+    {t:"callout", tone:"info", icon:"→", text:"근무 시간, 출퇴근 기록, 지각·결근, 휴일·휴가, 외근·출장, 연장근무와 수당은 **[나르카 근무 가이드](../work-guide/)**에서 확인해 주세요.\n2026년 11월 26일 시행 근태관리지침과 연장·야간·휴일근로 수당운영지침 기준으로 정리되어 있습니다."},
     {t:"callout", tone:"warn", icon:"!", text:"**출근은 08:00~11:00 사이, 1분 단위로 자유롭게** 하시면 됩니다. 기존처럼 정해진 출근 시각(08·09·10·11시) 중에서 고르지 않아도 되며, 별도 신청이나 승인도 필요 없습니다.\n퇴근은 출근 후 9시간입니다. 예: 09:47 출근 → 18:47 퇴근"},
     {t:"h2", id:"hours", text:"근무 가이드 바로가기"},
     {t:"ul", items:[
-      "[근무시간과 출퇴근 시각](https://yuharam00.github.io/narka-hr/work-guide/#hours): 08:00~11:00 사이 1분 단위로 자유롭게 출근, 출근 후 9시간 근무",
-      "[출퇴근 기록과 정정](https://yuharam00.github.io/narka-hr/work-guide/#record): Flex 기록 방법, 누락 시 정정 신청",
-      "[지각·조퇴·외출·결근](https://yuharam00.github.io/narka-hr/work-guide/#late): 기준과 신청 방법",
-      "[휴일과 휴가](https://yuharam00.github.io/narka-hr/work-guide/#leave): 회사 휴일, 연차 신청 기한, 반차·반반차",
-      "[외근·출장](https://yuharam00.github.io/narka-hr/work-guide/#trip): 사전 신청과 기록",
-      "[연장·야간·휴일근무](https://yuharam00.github.io/narka-hr/work-guide/#overtime): 시작 3시간 전까지 사전신청, 수당 지급까지",
-      "[결재라인](https://yuharam00.github.io/narka-hr/work-guide/#approval): 신청 유형별 결재·참조"]},
+      "[근무시간과 출퇴근 시각](../work-guide/#hours): 08:00~11:00 사이 1분 단위로 자유롭게 출근, 출근 후 9시간 근무",
+      "[출퇴근 기록과 정정](../work-guide/#record): Flex 기록 방법, 누락 시 정정 신청",
+      "[지각·조퇴·외출·결근](../work-guide/#late): 기준과 신청 방법",
+      "[휴일과 휴가](../work-guide/#leave): 회사 휴일, 연차 신청 기한, 반차·반반차",
+      "[외근·출장](../work-guide/#trip): 사전 신청과 기록",
+      "[연장·야간·휴일근무](../work-guide/#overtime): 시작 3시간 전까지 사전신청, 수당 지급까지",
+      "[결재라인](../work-guide/#approval): 신청 유형별 결재·참조"]},
     {t:"h2", id:"probation", text:"시용 기간"},
     {t:"ul", items:["입사일로부터 3개월간 운영하며, 기간 중 급여는 100% 지급합니다.","면담 일정은 [첫 주 · 첫 달 가이드](#first-month)를 참고해 주세요."]},
     {t:"h2", id:"leave", text:"휴가 사용 시 참고"},
@@ -585,7 +585,7 @@ const PAGES = [
       "올영세일·메가와리 기간은 긴급 이슈가 많으니 팀 내 일정과 미리 조율해 주세요.",
       "입사 초기 연차가 아직 발생하지 않았는데 휴가가 필요하면 인사팀과 먼저 상의해 주세요.",
       "리더는 특정 일자에 팀 내 휴가가 몰리지 않도록 조율합니다.",
-      "경조휴가는 [경조사 지원 안내 페이지](https://yuharam00.github.io/narka-hr/family-events/)에서 확인해 주세요."]},
+      "경조휴가는 [경조사 지원 안내 페이지](../family-events/)에서 확인해 주세요."]},
     {t:"h2", id:"trip", text:"출장 경비"},
     {t:"kv", rows:[
       ["출장 (숙박)","최소 1주 전 COO 사전 승인"],
@@ -606,14 +606,13 @@ const PAGES = [
       ["개인 USB·외부 클라우드 사용","안도영 이사 사전 승인"],
       ["Slack·Notion·Drive 외부 공유","COO 사전 승인"],
       ["사내 회의 녹음·녹화","참석자 전원 동의"],
-      ["제품·샘플 촬영 후 SNS 업로드","마케팅팀 사전 승인"],
       ["퇴사 시","장비·자료 전부 반납, 계정 삭제"]
     ]}
   ]
 },
 {
   id:"benefits", group:"policy", title:"복리후생", glyph:"B",
-  desc:"복리후생 19가지와 야근 지원 — 인사팀 복리후생 페이지에서 안내", updated:"2026.10.21", owner:"인사팀",
+  desc:"복리후생 18가지와 야근 지원 — 인사팀 복리후생 페이지에서 안내", updated:"2026.10.21", owner:"인사팀",
   notion:"3ff9a9cf104b814384abcad694698734", related:["work","family","guide"],
   blocks:[
     {t:"callout", tone:"info", icon:"+", text:"일을 더 잘하기 위해 필요한 복지가 있다면 언제든 인사팀에 제안해 주세요."},
@@ -624,7 +623,6 @@ const PAGES = [
       ["휴가","유급 여름휴가 최대 5일 (법정 연차휴가와 별도)","FLEX 신청"],
       ["근속","2년 근속 시 해외여행 및 건강검진 지원","{!확인 필요}"],
       ["생활","자사 제품 임직원 할인 60%","아래 '직원 전용 구매' 참고"],
-      ["생활","매주 월요일 조식 (샌드위치)","전 직원 대상"],
       ["생활","야근 석식 1인 13,000원 한도","아래 '야근 지원' 참고"],
       ["생활","야근 택시비","아래 '야근 지원' 참고"],
       ["생활","웰컴 패키지","{!확인 필요: 지급 시점}"],
@@ -704,9 +702,9 @@ const PAGES = [
 /* 메인 시작 순서: 노션 하위 페이지의 실제 항목에 연결 (없는 내용은 '준비 중') */
 const STEPS = [
   {no:"STEP 01", title:"첫 출근 준비", page:"first-day", anchor:"arrive",
-   items:["첫날 09:30 출근","근무 장소·업무 장비 확인","회사 메일 초대장 가입","제출 서류는 FLEX에 직접 등록"], status:"info"},
+   items:["첫날 10:00 출근","근무 장소·업무 장비 확인","회사 메일 초대장 가입","제출 서류는 FLEX에 직접 등록"], status:"info"},
   {no:"STEP 02", title:"첫날 온보딩", page:"first-day", anchor:"day1",
-   items:["인사 오리엔테이션·계약서 작성","계정·장비 세팅","브랜드 교육·웰컴런치","팀장 첫 면담"], checks:["d1-hr","d1-it","d1-team","d1-self"]},
+   items:["인사 오리엔테이션·계약서 작성","계정·장비 세팅","브랜드 교육·웰컴런치(팀 런치)","팀장 첫 면담"], checks:["d1-hr","d1-it","d1-team","d1-self"]},
   {no:"STEP 03", title:"첫 주 적응", page:"first-month", anchor:"week1",
    items:["팀 업무 흐름·채널 이해","브랜드 소개서 숙지","1개월 목표 설정","인사팀장 1주 면담"], checks:["w1"]},
   {no:"STEP 04", title:"첫 달 적응", page:"first-month", anchor:"month1",
@@ -743,13 +741,14 @@ function statusBadge(p){
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
 /* 사무실 이전(2026-11-26) 이후 자리배치도 링크를 사무실 좌석 배치 페이지로 자동 전환 (한국 시간 기준) */
 const SEAT_SHEET = "https://docs.google.com/spreadsheets/d/1FPpLITOqZxIqOa71sJJU91lRn9MLM1EqspudF9fz26Q/edit?gid=0#gid=0";
-const SEAT_PAGE = "https://yuharam00.github.io/narka-hr/office/";
+const SEAT_PAGE = "../office/";
 const AFTER_MOVE = new Date(Date.now() + 9 * 36e5).toISOString().slice(0, 10) >= "2026-11-26";
 function fmt(s){
   if(AFTER_MOVE) s = String(s).split("[팀 자리배치도 및 연락처](" + SEAT_SHEET + ")").join("[팀 자리배치도](" + SEAT_PAGE + ")").split(SEAT_SHEET).join(SEAT_PAGE);
   let h = esc(s);
   h = h.replace(/\{!([^}]*)\}/g, (_, t) => `<span class="flag">${t || "확인 필요"}</span>`);
   h = h.replace(/\[([^\]]+)\]\((#[\w-]+)\)/g, (_, t, u) => `<a class="int" href="${u}" data-nav="${u.slice(1)}">${t}</a>`);
+  h = h.replace(/\[([^\]]+)\]\((\.\.\/[^)\s]*)\)/g, (_, t, u) => `<a class="int" href="${u}">${t}</a>`);
   h = h.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, (_, t, u) => u.includes("yuharam00.github.io/narka-hr/") ? `<a class="int" href="${u}">${t}</a>` : `<a class="ext" href="${u}" target="_blank" rel="noopener noreferrer">${t}</a>`);
   h = h.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   h = h.replace(/`([^`]+)`/g, "<code>$1</code>");
